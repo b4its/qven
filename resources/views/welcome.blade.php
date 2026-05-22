@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
       --blue-dark: #0a3d8f;
       --blue-mid: #1565d8;
@@ -25,7 +26,9 @@
       --tech-desc-color: #5a7daa;
       --nav-bg: rgba(0,0,0,0.6);
     }
+
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg-primary);
@@ -33,12 +36,14 @@
       overflow-x: hidden;
       line-height: 1.6;
     }
+
     a { text-decoration: none; color: inherit; }
+
     img { max-width: 100%; display: block; }
 
     /* ── NAVBAR ── */
     .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       height: 64px; padding: 0 5%;
       background: rgba(0,0,0,0.6);
@@ -71,7 +76,7 @@
       transition: all 0.25s;
     }
     .navbar .btn-signup:hover { background: #fff; color: #2563eb; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 1001; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span {
       display: block; width: 24px; height: 2px; border-radius: 2px;
       background: #fff; transition: all 0.3s;
@@ -79,19 +84,12 @@
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    
+
     .mobile-menu {
       display: none; position: fixed; top: 64px; left: 0; right: 0;
-      z-index: 999; flex-direction: column; gap: 4px;
+      z-index: 99; flex-direction: column; gap: 4px;
       padding: 20px 5% 28px;
       background: rgba(37, 99, 235, 0.98);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .mobile-menu.open { display: flex; animation: slideDown 0.3s ease forwards; }
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
     }
     .mobile-menu a {
       font-weight: 500; font-size: 0.95rem;
@@ -123,7 +121,7 @@
     }
     .hero-inner {
       position: relative; z-index: 10; width: 100%;
-      max-width: 1200px; margin: 0 auto; padding: 100px 5% 80px;
+      max-width: 1200px; margin: 0 auto; padding: 80px 5%;
       display: flex; align-items: center; gap: 32px;
     }
     .hero-left { flex: 1; max-width: 480px; }
@@ -132,8 +130,8 @@
       font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 500;
     }
     .hero-left h1 strong { font-weight: 800; }
-    .hero-left p { font-size: clamp(0.8rem, 2vw, 1rem); margin-bottom: 32px; line-height: 1.6; color: rgba(255,255,255,0.85); }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-left p { font-size: clamp(0.75rem, 2.5vw, 0.95rem); margin-bottom: 32px; line-height: 1.6; color: rgba(255,255,255,0.85); }
+    .hero-buttons { display: flex; gap: 16px; }
     .hero-buttons button {
       padding: 12px 28px; border-radius: 999px;
       font-weight: 700; font-size: 0.875rem; cursor: pointer;
@@ -165,6 +163,7 @@
       position: absolute; bottom: 0; left: 0; right: 0;
       height: 1px; background: rgba(255,255,255,0.15); pointer-events: none;
     }
+
     @keyframes gentleFloat {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-14px); }
@@ -175,27 +174,44 @@
       padding: 80px 0; position: relative; overflow: hidden;
       background: #fff;
     }
-    .fitur-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 10; padding: 0 5%; }
+    .fitur-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 10; }
     .fitur-header p { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #2563eb; margin-bottom: 8px; }
     .fitur-header h2 { font-weight: 800; font-size: clamp(1.4rem, 2.5vw, 2rem); color: #1e293b; }
     .fitur-header h2 span { color: #2563eb; }
-    .marquee-container { position: relative; z-index: 10; height: 476px; padding: 20px 0; }
-    .marquee-track-wrapper { position: absolute; inset: 0; display: flex; gap: 24px; }
-    .marquee-track {
-      display: flex; gap: 24px; position: absolute;
-      will-change: transform;
+
+    .marquee-container { 
+      position: relative; 
+      z-index: 10; 
+      height: 550px; /* Tinggi disesuaikan agar tidak terpotong seperti masalah sebelumnya */
+      padding: 20px 0; 
+      overflow: hidden; 
     }
-    .marquee-track-a { left: 0; animation: marqueeA 16s linear infinite; }
-    .marquee-track-b { left: 1092px; animation: marqueeB 16s linear infinite; }
+    .marquee-track-wrapper { 
+      display: flex; 
+      width: max-content; 
+    }
+    .marquee-track {
+      display: flex; 
+      gap: 24px; 
+      padding-right: 24px;
+      /* Animasi berjalan ke kiri selama 30 detik (bisa diubah kecepatannya) */
+      animation: scrollMarquee 30s linear infinite; 
+    }
     .fitur-card {
-      flex: none; width: 340px; border-radius: 16px; overflow: hidden;
+      flex: none; 
+      width: clamp(240px, 32vw, 340px); 
+      border-radius: 16px; 
+      overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-      will-change: transform, opacity;
     }
     .fitur-card img { width: 100%; height: auto; display: block; user-select: none; pointer-events: none; }
-    @keyframes marqueeA { 0% { transform: translateX(0); } 100% { transform: translateX(-1092px); } }
-    @keyframes marqueeB { 0% { transform: translateX(0); } 100% { transform: translateX(-1092px); } }
+
+    /* Kunci animasi: Geser persis 50% dari total panjang track */
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     /* ── CARA KERJA OVERVIEW ── */
     .ck-overview {
@@ -210,33 +226,36 @@
     .ck-overview-inner { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; }
     .ck-header { text-align: center; margin-bottom: 80px; }
     .ck-header p { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #1d4ed8; margin-bottom: 16px; }
-    .ck-header h2 { font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; color: #0f172a; }
+    .ck-header h2 { font-weight: 800; font-size: 2.5rem; letter-spacing: -0.02em; color: #0f172a; }
     .ck-header h2 span { color: #1d4ed8; }
+
     .ck-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    
+
     /* Orbit */
-    .orbit-wrap { display: flex; justify-content: center; align-items: center; width: 100%; }
-    .orbit-container { position: relative; width: 500px; height: 500px; transition: transform 0.3s ease; }
+    .orbit-wrap { display: flex; justify-content: center; align-items: center; }
+    .orbit-container { position: relative; width: min(80vmin, 500px); height: min(80vmin, 500px); }
     .orbit-ring-outer {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 470px; height: 470px; border-radius: 50%;
+      width: 94%; height: 94%; border-radius: 50%;
       border: 1.5px solid rgba(29, 78, 216, 0.15);
     }
     .orbit-ring-inner {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 310px; height: 310px; border-radius: 50%;
+      width: 62%; height: 62%; border-radius: 50%;
       border: 1.5px solid rgba(29, 78, 216, 0.10);
     }
     .orbit-center {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      width: 130px; height: 130px; border-radius: 50%;
+      width: 26%; height: 26%; border-radius: 50%;
+      min-width: 80px; min-height: 80px; max-width: 160px; max-height: 160px;
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
       box-shadow: 0 0 0 16px rgba(59, 130, 246, 0.10), 0 0 0 32px rgba(59, 130, 246, 0.05);
       display: flex; align-items: center; justify-content: center; z-index: 10;
     }
     .orbit-node {
       position: absolute; top: 50%; left: 50%;
-      width: 46px; height: 46px; margin-top: -23px; margin-left: -23px;
+      width: clamp(36px, 8vmin, 46px); height: clamp(36px, 8vmin, 46px);
+      margin-top: calc(-1 * (clamp(36px, 8vmin, 46px) / 2)); margin-left: calc(-1 * (clamp(36px, 8vmin, 46px) / 2));
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
       border-radius: 50%; z-index: 5;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -247,7 +266,7 @@
       0%, 100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.4), 0 4px 12px rgba(0,0,0,0.15); }
       50% { box-shadow: 0 0 0 12px rgba(29, 78, 216, 0), 0 4px 12px rgba(0,0,0,0.15); }
     }
-    
+
     /* Steps */
     .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .step-item {
@@ -265,6 +284,7 @@
       background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
     }
     .step-text { font-size: 1rem; font-weight: 600; color: #334155; line-height: 1.4; }
+
     .btn-peta {
       display: flex; align-items: center; gap: 16px;
       padding: 16px 20px; border-radius: 12px;
@@ -272,7 +292,6 @@
       border: none; cursor: pointer; font-family: inherit;
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
       transition: all 0.3s;
-      width: 100%;
     }
     .btn-peta:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
     .btn-peta-icon {
@@ -282,6 +301,8 @@
     }
     .btn-peta-icon svg { transition: transform 0.3s; }
     .btn-peta-icon.open svg { transform: rotate(180deg); }
+    .btn-peta { width: 100%; justify-content: center; }
+    .steps-grid .btn-peta { grid-column: auto; justify-self: stretch; }
 
     /* ── CARA KERJA PETA (Flowchart) ── */
     .ck-peta {
@@ -307,40 +328,42 @@
     @keyframes waveMove1 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @keyframes waveMove2 { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
     @keyframes waveMove3 { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .ck-peta-inner { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; }
-    .ck-peta-header { text-align: center; margin-bottom: 64px; }
-    .ck-peta-header p { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
-    .ck-peta-header h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; }
-    .ck-peta-header h2 span { color: #93c5fd; background:#07284d; padding:8px; border-radius:8px }
-    .ck-peta-header .sub { font-size: 0.88rem; margin-top: 8px; color: rgba(255,255,255,0.75); }
-    
-    /* Horizontal Scroll Wrapper untuk Flowchart di Mobile */
-    .flowchart-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch; /* Smooth scroll di iOS */
-      padding-bottom: 40px; /* Space untuk tooltip bawah */
-    }
-    .flowchart-wrapper::-webkit-scrollbar { height: 6px; }
-    .flowchart-wrapper::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
-    .flowchart-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
 
-    .flowchart { position: relative; height: clamp(350px, 45vw, 500px); min-width: 800px; }
+    .ck-peta-inner { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; }
+    .ck-peta-header {
+      text-align: center;
+      margin: 0 0 24px;
+      max-width: none;
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      display: block;
+      backdrop-filter: none;
+      box-shadow: none;
+    }
+    .ck-peta-header p { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffffff; margin-bottom: 6px; }
+    .ck-peta-header h2 { font-weight: 800; font-size: clamp(1.4rem, 2.6vw, 2rem); color: #ffffff; margin: 0; }
+    .ck-peta-header h2 span { color: #ffffff; font-weight: 800; }
+    .ck-peta-header .sub { font-size: 0.88rem; margin-top: 8px; color: #ffffff; }
+
+    .flowchart { position: relative; height: clamp(350px, 45vw, 500px); }
     .flowchart svg.lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
     .flowchart svg.lines line {
       stroke: rgba(255,255,255,0.5); stroke-width: 0.8; stroke-dasharray: 4,3;
       opacity: 0; transition: opacity 1s ease;
     }
     .flowchart svg.lines line.visible { opacity: 0.7; }
+
     .flow-node-wrap {
       position: absolute; z-index: 10;
       transform: translate(-50%, -50%) scale(0);
       transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .flow-node-wrap.visible { transform: translate(-50%, -50%) scale(1); }
+
     .flow-node-group { position: relative; }
     .flow-node-circle {
-      width: 60px; height: 60px; border-radius: 50%;
+      width: clamp(68px, 9vw, 88px); height: clamp(68px, 9vw, 88px); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
@@ -348,11 +371,14 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
       transition: transform 0.3s;
     }
-    .flow-node-circle:hover { transform: scale(1.1); }
+    .flow-node-circle:hover { transform: scale(1.05); }
     .flow-node-circle .inner {
-      width: 40px; height: 40px; border-radius: 50%;
+      width: clamp(44px, 6vw, 56px); height: clamp(44px, 6vw, 56px); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       background: white;
+    }
+    .flow-node-circle .inner svg {
+      width: 26px; height: 26px;
     }
     .flow-tooltip {
       position: absolute; width: 200px; padding: 12px; border-radius: 12px;
@@ -365,6 +391,7 @@
     .flow-node-group:hover .flow-tooltip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0) !important; }
     .flow-tooltip .tt-title { font-weight: 700; font-size: 0.875rem; color: #1d4ed8; }
     .flow-tooltip .tt-desc { font-size: 11px; color: #64748b; margin-top: 4px; }
+
     .flow-label {
       position: absolute; white-space: nowrap; font-size: 11px; font-weight: 700;
       color: #1e293b; background: rgba(255,255,255,0.9);
@@ -378,10 +405,11 @@
       padding: 80px 0; position: relative; overflow: hidden;
       background: var(--bg-primary);
     }
-    .tech-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 10; padding: 0 5%; }
+    .tech-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 10; }
     .tech-header p { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 8px; }
     .tech-header h2 { font-weight: 800; font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--text-dark); margin-bottom: 8px; }
     .tech-header h2 span { color: var(--blue-bright); }
+
     .tech-marquee-container { position: relative; z-index: 10; height: 120px; padding: 16px 0; }
     .tech-marquee-wrapper { position: absolute; inset: 0; display: flex; gap: 20px; }
     .tech-marquee-track { display: flex; gap: 20px; position: absolute; }
@@ -399,6 +427,7 @@
     .tech-card-img img { width: 100%; height: 100%; object-fit: contain; }
     .tech-card-info h4 { font-size: 0.875rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--tech-name-color); }
     .tech-card-info p { font-size: 0.75rem; color: var(--tech-desc-color); line-height: 1.4; }
+
     @keyframes marqueeTechA { 0% { transform: translateX(0); } 100% { transform: translateX(-1500px); } }
     @keyframes marqueeTechB { 0% { transform: translateX(0); } 100% { transform: translateX(-1500px); } }
 
@@ -413,41 +442,93 @@
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── RESPONSIVE MEDIA QUERIES ── */
-    @media (max-width: 1024px) {
-      .navbar .nav-links, .navbar .nav-actions { display: none; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      /* Mobile breakpoint: show hamburger and mobile menu only on small screens */
+      .navbar .nav-links { display: none; }
+      .navbar .nav-actions { display: none; }
       .hamburger { display: flex; }
+      .mobile-menu.open { display: flex; }
       .ck-grid { grid-template-columns: 1fr; gap: 48px; }
-      .hero-inner { flex-direction: column; text-align: center; gap: 40px; padding-top: 120px; }
+      .orbit-container { transform: scale(0.85); }
+      .hero-inner { flex-direction: column; text-align: center; gap: 32px; padding: 60px 5% !important; }
       .hero-left { max-width: 100%; }
       .hero-buttons { justify-content: center; }
       .hero-right { max-width: 420px; }
-      .orbit-container { transform: scale(0.85); }
-    }
-    @media (max-width: 768px) {
-      .orbit-container { transform: scale(0.65); }
-      .fitur-card { width: 300px; }
-      .marquee-container { height: 420px; }
-      .ck-header h2 { font-size: 2rem; }
+
+      /* 1. Batasi lebar wrapper selebar layar dan nyalakan scroll horizontal */
+      .marquee-track-wrapper {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 15px;
+      }
+      
+      /* 2. Matikan animasi otomatis agar tidak melawan jari saat di-scroll */
+      .marquee-track {
+        animation: none !important;
+        width: max-content;
+      }
+      
+      /* 3. Efek magnet agar saat digeser, card posisinya pas di tengah */
+      .fitur-card {
+        scroll-snap-align: center;
+      }
+
+      /* 4. (Opsional) Sembunyikan garis scrollbar agar UI tetap bersih */
+      .marquee-track-wrapper::-webkit-scrollbar {
+        display: none;
+      }
     }
     @media (max-width: 640px) {
       .steps-grid { grid-template-columns: 1fr; }
-      .orbit-container { transform: scale(0.55); }
-      .marquee-container { height: 380px; }
+      .orbit-container { transform: scale(0.65); }
+      /* UBAH INI: Naikkan tingginya dari 380px menjadi sekitar 500px */
+      .marquee-container { height: 500px; }
       .fitur-card { width: 280px; }
-      .hero-left h1 { font-size: 1.8rem; }
+      .hero-left h1 { margin-bottom: 16px; line-height: 1.3; }
+      .hero-left p { margin-bottom: 24px; }
     }
+    /* Extra-small devices (phones) optimizations */
     @media (max-width: 480px) {
-      .hero-buttons { flex-direction: column; width: 100%; }
-      .hero-buttons button { width: 100%; }
-      .orbit-container { transform: scale(0.45); }
-      .ck-overview { padding: 64px 5%; }
-      .tech-section { padding: 64px 0; }
+      .navbar { height: 56px; padding: 0 4%; }
+      .navbar .logo img { height: 28px; }
+      .mobile-menu { top: 56px; bottom: 0; overflow-y: auto; }
+
+      .hero { min-height: 100vh; }
+      .hero-inner { padding: 50px 5%; flex-direction: column; gap: 24px; }
+      .hero-left h1 { font-size: clamp(1.1rem, 5vw, 1.6rem); margin-bottom: 12px; line-height: 1.35; }
+      .hero-left p { font-size: clamp(0.7rem, 2.2vw, 0.85rem); margin-bottom: 20px; }
+      .hero-buttons { flex-direction: column; gap: 12px; }
+      .hero-buttons button { width: 100%; padding: 12px; }
+      .hero-right img { max-width: 320px; margin: 0 auto; }
+
+      /* Make marquee static / scrollable on small screens to reduce CPU */
+      /* UBAH INI: Biarkan tingginya auto agar page di bawah otomatis terdorong turun */
+      .marquee-container { height: auto; }
+      .marquee-track-wrapper { position: relative; display: flex; gap: 16px; overflow-x: auto; padding-bottom: 6px; }
+      .marquee-track, .marquee-track-a, .marquee-track-b { position: static !important; left: auto !important; animation: none !important; display: flex; gap: 16px; }
+      /* hide duplicated track on small screens */
+      .marquee-track.marquee-track-b { display: none !important; }
+      .fitur-card { width: 260px; }
+
+      /* UBAH INI JUGA: Agar logo stack teknologi tidak kepotong */
+      .tech-marquee-container { height: auto; padding-bottom: 20px; }
+      .tech-marquee-wrapper { position: relative; display: flex; gap: 12px; overflow-x: auto; }
+      .tech-marquee-track, .tech-track-a, .tech-track-b { position: static !important; left: auto !important; animation: none !important; display: flex; gap: 12px; }
+      .tech-marquee-track.tech-track-b { display: none !important; }
+      .tech-card { width: 220px; }
+
+      .ck-peta .flowchart { height: 300px; }
+
+      .btn-primary, .btn-secondary { width: 100%; }
     }
     @keyframes spBlob {
       0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; }
       50% { transform: translate(-50%,-50%) scale(1.2); opacity: 1; }
     }
+    
   </style>
 </head>
 <body>
@@ -455,7 +536,8 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
-    <img src="logo-qven.png" alt="Q.ven">
+    <!-- TODO (PHP): Ganti atribut src ini dengan path dinamis dari server, misal: -->
+    <img src="{{ asset('landing/logo-qven.png') }}" alt="Q.ven">
   </div>
   <ul class="nav-links">
     <li><a href="#hero">Dashboard</a></li>
@@ -465,21 +547,23 @@
   </ul>
   <div class="nav-actions">
     <a href="{{ route('auth.login.index') }}">Log In</a>
-    <button class="btn-signup">Sign Up</button>
+    <a href="{{ route('auth.register.index') }}" class="btn-signup">Sign Up</a>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
-
+<!-- Mobile menu (hanya muncul di mobile). -->
 <div class="mobile-menu" id="mobileMenu">
+  <!-- TODO (PHP): Render daftar menu secara dinamis jika diperlukan -->
   <a href="#hero" onclick="closeMenu()">Dashboard</a>
   <a href="#fitur" onclick="closeMenu()">Fitur</a>
   <a href="#cara-kerja" onclick="closeMenu()">Cara Kerja</a>
   <a href="#teknologi" onclick="closeMenu()">Teknologi</a>
   <div class="mobile-actions">
-    <a href="#" class="btn-login">Log In</a>
-    <a href="#" class="btn-signup-mobile">Sign Up</a>
+    <!-- TODO (PHP): Ganti href button login/signup ke endpoint PHP autentikasi -->
+    <a href="{{ route('auth.login.index') }}" class="btn-login">Log In</a>
+    <a href="{{ route('auth.register.index') }}" class="btn-signup-mobile">Sign Up</a>
   </div>
 </div>
 
@@ -487,15 +571,20 @@
 <section class="hero" id="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <h1>Memastikan kualitas gizi serta <strong>Kelayakan Vendor</strong> dengan <strong>Machine Learning</strong> dan Transparansi <strong>Blockchain</strong></h1>
+      <h1>Memastikan <strong>kualitas gizinya</strong> serta <strong>Kelayakan Vendor</strong> dengan <strong>Machine Learning</strong> dan Transparansi <strong>Blockchain</strong></h1>
       <p>Quality Vendor and Nutrition<br>Makan Bergizi Gratis</p>
       <div class="hero-buttons">
-        <button class="btn-primary">Coba Sekarang</button>
-        <button class="btn-secondary">Sign Up</button>
+        <a href="{{ route('auth.login.index') }}">
+          <button class="btn-primaru">Coba Sekarang</button>
+        </a>
+        <a href="{{ route('auth.register.index') }}">
+          <button class="btn-secondary">Sign Up</button>
+        </a>
       </div>
     </div>
     <div class="hero-right">
-      <img src="{{ asset('landing/food-tray.png') }}" alt="Nampan Makanan Bergizi">
+      <!-- TODO (PHP): Ganti src gambar hero dengan path dinamis dari server jika perlu -->
+      <img src="{{ asset('landing/food-tray.png')}}" alt="Nampan Makanan Bergizi">
     </div>
   </div>
   <button class="hero-chevron" onclick="document.getElementById('fitur').scrollIntoView({behavior:'smooth'})">
@@ -512,8 +601,6 @@
   </div>
   <div class="marquee-container">
     <div class="marquee-track-wrapper">
-      <div class="marquee-track marquee-track-a" id="fiturTrackA"></div>
-      <div class="marquee-track marquee-track-b" id="fiturTrackB"></div>
     </div>
   </div>
 </section>
@@ -527,18 +614,20 @@
     <div class="blob" style="width:300px;height:300px;top:20%;left:50%;background:radial-gradient(circle,rgba(29,78,216,0.08) 0%,transparent 70%);"></div>
     <div class="blob" style="width:450px;height:450px;bottom:10%;right:20%;background:radial-gradient(circle,rgba(59,130,246,0.07) 0%,transparent 70%);"></div>
   </div>
+
   <div class="ck-overview-inner">
     <div class="ck-header">
       <p>CARA KERJA</p>
       <h2>Cara Kerja <span>Q.ven</span></h2>
     </div>
+
     <div class="ck-grid">
       <!-- Orbit -->
       <div class="orbit-wrap">
         <div class="orbit-container" id="orbitContainer">
           <div class="orbit-ring-outer"></div>
           <div class="orbit-ring-inner"></div>
-          <div class="orbit-center" id="orbitCenter" >
+          <div class="orbit-center" id="orbitCenter">
             <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
               <line x1="16" y1="4" x2="16" y2="20"/>
               <line x1="24" y1="4" x2="24" y2="20"/>
@@ -553,36 +642,37 @@
           </div>
         </div>
       </div>
+
       <!-- Steps -->
       <div class="steps-wrap">
         <div class="steps-grid">
           <div class="step-item">
             <div class="step-num">1</div>
-            <span class="step-text" >Akses Sistem</span>
-          </div>
-          <div class="step-item">
-            <div class="step-num">5</div>
-            <span class="step-text">Pengelolaan Data oleh Admin Vendor</span>
+            <span class="step-text">Akses Sistem</span>
           </div>
           <div class="step-item">
             <div class="step-num">2</div>
             <span class="step-text">Registrasi dan Login</span>
           </div>
           <div class="step-item">
-            <div class="step-num">6</div>
-            <span class="step-text">Analisis dan Penyimpanan Data</span>
-          </div>
-          <div class="step-item">
             <div class="step-num">3</div>
             <span class="step-text">Identifikasi Role Pengguna</span>
           </div>
           <div class="step-item">
-            <div class="step-num">7</div>
-            <span class="step-text">Penerimaan dan Feedback</span>
-          </div>
-          <div class="step-item">
             <div class="step-num">4</div>
             <span class="step-text">Pengelolaan Vendor</span>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <span class="step-text">Pengelolaan Data oleh Admin Vendor</span>
+          </div>
+          <div class="step-item">
+            <div class="step-num">6</div>
+            <span class="step-text">Analisis dan Penyimpanan Data</span>
+          </div>
+          <div class="step-item">
+            <div class="step-num">7</div>
+            <span class="step-text">Penerimaan dan Feedback</span>
           </div>
           <button class="btn-peta" id="btnPeta" onclick="togglePeta()">
             <div class="btn-peta-icon" id="btnPetaIcon">
@@ -611,21 +701,18 @@
   </div>
   <div class="ck-peta-glow1"></div>
   <div class="ck-peta-glow2"></div>
+
   <div class="ck-peta-inner">
     <div class="ck-peta-header">
       <p>Alur Sistem</p>
       <h2>Cara Kerja <span>Q.ven</span></h2>
       <p class="sub">Hover atau tap pada setiap node untuk melihat detail proses</p>
     </div>
-    
-    <!-- DIBUNGKUS WRAPPER AGAR BISA HORIZONTAL SCROLL DI MOBILE -->
-    <div class="flowchart-wrapper">
-        <div class="flowchart" id="flowchart">
-          <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" id="flowLines"></svg>
-          <div id="flowNodes"></div>
-        </div>
-    </div>
 
+    <div class="flowchart" id="flowchart">
+      <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none" id="flowLines"></svg>
+      <div id="flowNodes"></div>
+    </div>
   </div>
 </section>
 
@@ -659,32 +746,85 @@ function closeMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
+/* ===================== THEME TOGGLE ===================== */
+function applyTheme(theme) {
+  if (theme === 'dark') document.documentElement.classList.add('dark');
+  else document.documentElement.classList.remove('dark');
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  try { localStorage.setItem('theme', theme); } catch(e){}
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.classList.contains('dark');
+  applyTheme(isDark ? 'light' : 'dark');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = (function(){ try { return localStorage.getItem('theme'); } catch(e){ return null; } })();
+  if (saved) applyTheme(saved);
+  else {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+  const tbtn = document.getElementById('themeToggle'); if (tbtn) tbtn.addEventListener('click', toggleTheme);
+});
+
 /* ===================== ORBIT ROTATION ===================== */
 (function() {
   const orbitContainer = document.getElementById('orbitContainer');
   const orbitCenter = document.getElementById('orbitCenter');
   if (!orbitContainer) return;
+
   const baseAngles = [0, 51, 103, 154, 206, 257, 309];
-  const baseRadii = [155, 235, 155, 235, 155, 235, 155];
+  let baseRadii = [];
   let rotation = 0, isHovering = false;
+
+  // Compute radii based on orbitContainer size so orbit adapts to viewport
+  function computeRadii() {
+    const rect = orbitContainer.getBoundingClientRect();
+    const size = Math.min(rect.width, rect.height) || 400;
+    const outer = Math.round(size * 0.47);
+    const inner = Math.round(size * 0.31);
+    baseRadii = [outer, inner, outer, inner, outer, inner, outer];
+    // update existing nodes if any
+    const nodes = orbitContainer.querySelectorAll('.orbit-node');
+    nodes.forEach((node, i) => {
+      const angle = baseAngles[i];
+      const r = baseRadii[i] || outer;
+      node.style.transform = 'rotate(' + angle + 'deg) translateX(' + r + 'px) rotate(' + (-angle) + 'deg)';
+    });
+  }
+
   orbitContainer.addEventListener('mouseenter', () => { isHovering = true; });
   orbitContainer.addEventListener('mouseleave', () => { isHovering = false; });
-  
-  // Create nodes
+
+  // Create nodes (compute radii first)
+  computeRadii();
   baseAngles.forEach((angle, i) => {
     const node = document.createElement('div');
     node.className = 'orbit-node';
     const delays = ['0s','0.3s','0.6s','0.9s','1.2s','1.5s','1.8s'];
-    node.style.transform = 'rotate(' + angle + 'deg) translateX(' + baseRadii[i] + 'px) rotate(' + (-angle) + 'deg)';
+    const r = baseRadii[i] || Math.round((orbitContainer.offsetWidth || 400) * 0.4);
+    node.style.transform = 'rotate(' + angle + 'deg) translateX(' + r + 'px) rotate(' + (-angle) + 'deg)';
     node.style.animationDelay = delays[i];
     node.innerHTML = '<svg width="20" height="20" viewBox="0 0 64 64" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><line x1="20" y1="8" x2="20" y2="24"/><line x1="28" y1="8" x2="28" y2="24"/><line x1="36" y1="8" x2="36" y2="24"/><path d="M16 24 Q28 30 40 24" fill="none"/><line x1="28" y1="28" x2="28" y2="56"/><ellipse cx="50" cy="22" rx="6" ry="9"/><line x1="50" y1="31" x2="50" y2="56"/></svg>';
     orbitContainer.appendChild(node);
   });
+
+  // Recompute radii and update node positions on window resize (debounced)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      computeRadii();
+    }, 120);
+  });
+
   function rotateOrbit() {
     if (!isHovering) {
       rotation += 0.08;
-      // Rotasi ditangani JS, scaling diatur secara dinamis via CSS Transform Media Query
-      orbitContainer.style.transform = `scale(var(--scale-factor, 1)) rotate(${rotation}deg)`;
+      orbitContainer.style.transform = 'rotate(' + rotation + 'deg)';
       const nodes = orbitContainer.querySelectorAll('.orbit-node');
       nodes.forEach((node, i) => {
         node.style.transform = 'rotate(' + baseAngles[i] + 'deg) translateX(' + baseRadii[i] + 'px) rotate(' + (-baseAngles[i] - rotation) + 'deg)';
@@ -693,62 +833,70 @@ function closeMenu() {
     }
     requestAnimationFrame(rotateOrbit);
   }
-  
-  // Update CSS custom property for responsive scaling without breaking the animation logic
-  function setScaleFactor() {
-      const width = window.innerWidth;
-      let scale = 1;
-      if (width <= 480) scale = 0.45;
-      else if (width <= 640) scale = 0.55;
-      else if (width <= 768) scale = 0.65;
-      else if (width <= 1024) scale = 0.85;
-      orbitContainer.style.setProperty('--scale-factor', scale);
-  }
-  window.addEventListener('resize', setScaleFactor);
-  setScaleFactor();
   rotateOrbit();
 })();
 
 /* ===================== FITUR MARQUEE + FOCAL ZOOM ===================== */
 (function() {
   const SET = ['{{ asset('landing/public/fitur-pengawasan.png') }}', '{{ asset('landing/public/fitur-analisis.png') }}', '{{ asset('landing/public/fitur-integritas.png') }}'];
-  const CARD_W = 340, GAP = 24;
-  function makeCard(src, idx, totalIdx) {
+
+  function makeCard(src, idx) {
     return '<div class="fitur-card fitur-card-item" data-set-idx="' + idx + '">' +
       '<img src="' + src + '" alt="Fitur" loading="lazy" draggable="false">' +
       '</div>';
   }
-  const trackA = document.getElementById('fiturTrackA');
-  const trackB = document.getElementById('fiturTrackB');
-  let cardsHtml = '';
-  SET.forEach((src, i) => { cardsHtml += makeCard(src, i, i); });
-  trackA.innerHTML = cardsHtml;
-  trackB.innerHTML = cardsHtml;
+
+  const trackWrapper = document.querySelector('.marquee-track-wrapper');
   
+  // Membuat duplikasi gambar agar cukup panjang untuk animasi berjalan
+  let cardsHtml = '';
+  // Kita loop 4 kali (SET x 4) agar panjang elemen cukup untuk animasi 50%
+  for (let i = 0; i < 4; i++) {
+    SET.forEach((src, j) => { cardsHtml += makeCard(src, j); });
+  }
+  
+  // Masukkan semua card ke dalam 1 track panjang
+  trackWrapper.innerHTML = '<div class="marquee-track">' + cardsHtml + '</div>';
+
+  // Logika efek Zoom (Focal Zoom)
   let raf;
   function tick() {
     const all = document.querySelectorAll('.fitur-card-item');
     if (!all.length) { raf = requestAnimationFrame(tick); return; }
+    
+    // Cari titik tengah horizontal dari layar
     const cx = window.innerWidth / 2;
+    
+    // Cari elemen mana yang paling dekat dengan titik tengah
     let ci = 0, cd = Infinity;
     all.forEach((c, i) => {
-      const r = c.getBoundingClientRect();
-      const d = Math.abs((r.left + r.width / 2) - cx);
-      if (d < cd) { cd = d; ci = i; }
+      const rect = c.getBoundingClientRect();
+      const centerOfCard = rect.left + (rect.width / 2);
+      const d = Math.abs(centerOfCard - cx);
+      
+      if (d < cd) { 
+        cd = d; 
+        ci = i; 
+      }
     });
-    const mi = ci % SET.length;
+    
+    // Berikan efek membesar dan full warna ke elemen yang di tengah
     all.forEach((c, i) => {
-      const isCenter = (i % SET.length) === mi;
+      const isCenter = (i === ci);
       c.style.transform = 'scale(' + (isCenter ? 1.06 : 0.88) + ')';
       c.style.opacity = isCenter ? '1' : '0.5';
     });
+    
     raf = requestAnimationFrame(tick);
   }
-  raf = requestAnimationFrame(tick);
+  
+  if (window.innerWidth > 768) raf = requestAnimationFrame(tick);
 })();
 
 /* ===================== TEKNOLOGI MARQUEE + FOCAL ZOOM ===================== */
 (function() {
+  // TODO (PHP): Render data teknologi dari server (nama, deskripsi, src).
+  // Bisa di-echo langsung sebagai JSON atau dipanggil lewat endpoint API.
   const SET = [
     { name: 'TensorFlow', desc: 'Framework ML untuk model prediksi', src: 'https://img.icons8.com/color/1200/tensorflow.jpg' },
     { name: 'PyTorch', desc: 'Deep learning untuk analisis data', src: 'https://img.icons8.com/fluency/1200/pytorch.png' },
@@ -756,19 +904,22 @@ function closeMenu() {
     { name: 'Hyperledger Fabric', desc: 'Blockchain untuk transparansi', src: 'https://products.containerize.com/id/blockchain-platforms/hyperledger-fabric/menu_image.png' },
     { name: 'Pandas', desc: 'Data manipulation & analysis', src: 'https://img.icons8.com/color/1200/pandas.jpg' },
   ];
+  const CARD_W = 280, GAP = 20, SET_W = (CARD_W + GAP) * SET.length;
+
   function makeTechCard(tech, idx) {
     return '<div class="tech-card tech-card-item" data-set-idx="' + idx + '">' +
       '<div class="tech-card-img"><img src="' + tech.src + '" alt="' + tech.name + '" loading="lazy" onerror="this.style.display=\'none\'" draggable="false"></div>' +
       '<div class="tech-card-info"><h4>' + tech.name + '</h4><p>' + tech.desc + '</p></div>' +
       '</div>';
   }
+
   const trackA = document.getElementById('techTrackA');
   const trackB = document.getElementById('techTrackB');
   let cardsHtml = '';
   SET.forEach((tech, i) => { cardsHtml += makeTechCard(tech, i); });
   trackA.innerHTML = cardsHtml;
   trackB.innerHTML = cardsHtml;
-  
+
   let raf;
   function tick() {
     const all = document.querySelectorAll('.tech-card-item');
@@ -787,7 +938,8 @@ function closeMenu() {
     });
     raf = requestAnimationFrame(tick);
   }
-  raf = requestAnimationFrame(tick);
+  // Only run the focal-zoom animation on larger screens to save CPU on phones
+  if (window.innerWidth > 768) raf = requestAnimationFrame(tick);
 })();
 
 /* ===================== CARA KERJA PETA TOGGLE ===================== */
@@ -797,6 +949,7 @@ function togglePeta() {
   const peta = document.getElementById('cara-kerja-peta');
   const icon = document.getElementById('btnPetaIcon');
   const text = document.getElementById('btnPetaText');
+
   if (petaVisible) {
     peta.classList.add('open');
     icon.classList.add('open');
@@ -810,14 +963,16 @@ function togglePeta() {
   }
 }
 
-/* ===================== FLOWCHART ===================== */
+/* ===================== FLOWCHART (VERSI 25) ===================== */
 let flowchartInited = false;
 function initFlowchart() {
   if (flowchartInited) {
+    // Just re-trigger animations
     showFlowchartAnim();
     return;
   }
   flowchartInited = true;
+
   const icons = {
     'log-in': '<svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>',
     'user-plus': '<svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>',
@@ -828,6 +983,7 @@ function initFlowchart() {
     'bar-chart-3': '<svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>',
     'message-square': '<svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
   };
+
   const flowSteps = [
     { id: 1, title: 'Akses Sistem', desc: 'Pengguna mengakses sistem Q.ven melalui aplikasi web.', icon: 'log-in', x: 6, y: 50 },
     { id: 2, title: 'Registrasi', desc: 'Pengguna melakukan registrasi akun atau login ke sistem.', icon: 'user-plus', x: 18, y: 20 },
@@ -838,9 +994,11 @@ function initFlowchart() {
     { id: 7, title: 'Blockchain', desc: 'Sistem menganalisis data dan menyimpannya di blockchain.', icon: 'bar-chart-3', x: 80, y: 50 },
     { id: 8, title: 'Feedback', desc: 'Penerima manfaat memberikan feedback terhadap kualitas makanan.', icon: 'message-square', x: 94, y: 35 },
   ];
+
   const linesSvg = document.getElementById('flowLines');
   const nodesContainer = document.getElementById('flowNodes');
-  
+
+  // Draw lines
   let linesHtml = '';
   for (let i = 0; i < flowSteps.length - 1; i++) {
     const from = flowSteps[i];
@@ -848,7 +1006,8 @@ function initFlowchart() {
     linesHtml += '<line x1="' + from.x + '%" y1="' + from.y + '%" x2="' + to.x + '%" y2="' + to.y + '%" data-idx="' + i + '"/>';
   }
   linesSvg.innerHTML = linesHtml;
-  
+
+  // Draw nodes
   let nodesHtml = '';
   flowSteps.forEach((step, i) => {
     const isBottom = i % 2 === 0;
@@ -867,15 +1026,19 @@ function initFlowchart() {
       '</div>';
   });
   nodesContainer.innerHTML = nodesHtml;
+
   showFlowchartAnim();
 }
 
 function showFlowchartAnim() {
+  // Trigger line animations
   setTimeout(() => {
     document.querySelectorAll('.flowchart svg.lines line').forEach((line, i) => {
       setTimeout(() => { line.classList.add('visible'); }, 500 + i * 250);
     });
   }, 100);
+
+  // Trigger node animations
   document.querySelectorAll('.flow-node-wrap').forEach((node, i) => {
     setTimeout(() => { node.classList.add('visible'); }, i * 200);
   });
@@ -888,11 +1051,17 @@ function showFlowchartAnim() {
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
+
   document.querySelectorAll('.reveal, .fitur-header, .tech-header, .ck-header, .ck-peta-header, .steps-wrap').forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
   });
 })();
+// Close mobile menu automatically when switching to desktop width
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) closeMenu();
+});
 </script>
+
 </body>
 </html>
