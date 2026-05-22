@@ -1,0 +1,4 @@
+flask
+Pillow
+sentence-transformers==3.0.1
+transformers==4.40.0

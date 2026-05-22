@@ -1,0 +1,1264 @@
+[
+  {
+    "fabric_transaction_id": "defd13b1c3ca4719cd491b839dc28dcf",
+    "timestamp": "2026-04-14T23:33:58.972Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama ehanz telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "ehanz",
+          "email": "anjayehan@gmail.com",
+          "password": "$2y$12$o42QMW858wNbOTLJMnJ/lOdTBzORsjK03i2T8NHI/EtT7Kcv0uBh6",
+          "role": "penerima",
+          "updated_at": "2026-04-14 23:33:54",
+          "created_at": "2026-04-14 23:33:54",
+          "id": 2
+        }
+      },
+      "local_transaction_hash": "5b2d04325e33f2a09e4f9b62c470b369653e7c45faead41f238eb793d2b45526"
+    },
+    "previous_block_hash": "GENESIS BLOCK"
+  },
+  {
+    "fabric_transaction_id": "d7d769aae532db3531026d3101122839",
+    "timestamp": "2026-04-14T23:34:57.111Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-A2HFPGVI telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Makanan Standar",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260414_233452_new.jpg",
+          "code": "MBG-A2HFPGVI",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-14T23:34:52.000000Z",
+          "created_at": "2026-04-14T23:34:52.000000Z",
+          "id": 2
+        }
+      },
+      "local_transaction_hash": "fe94d8d944a1f0cf19ac51b3f96e287e74c74d7c774e053bb869f5579235ca9f"
+    },
+    "previous_block_hash": "e106316243feba1eb0841597dd4c8e65633bddb26cd5f82b1b60e2e29e80430f"
+  },
+  {
+    "fabric_transaction_id": "811c20b0e51dd8d8bf46b3550de4a0a2",
+    "timestamp": "2026-04-14T23:35:09.785Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-A2HFPGVI telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-14T23:34:52.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-14 23:35:05",
+          "deskripsi_gizi": "Sajian ini didominasi oleh karbohidrat dari nasi putih. Protein yang ada berasal dari sumber nabati (tahu), yang mana bioavailabilitasnya lebih rendah dibandingkan protein hewani. Kandungan mikronutrien penting seperti Zat Besi, Zinc, Kalsium, dan Vitamin A sangatlah rendah, menciptakan risiko defisiensi zat gizi mikro tersembunyi jika porsi ini dikonsumsi terus menerus tanpa variasi.",
+          "json_gizi": "{\"makanan_pokok(Sumber Karbohidrat)\":\"Cukup - Nasi putih memberikan energi utama, namun kurangi porsi untuk balita.\",\"lauk_pauk(Sumber Protein Hewani & Nabati)\":\"Sedang - Tahu (NABATI) menyediakan protein, namun piring ini mutlak membutuhkan tambahan protein hewani (telur, ikan, daging).\",\"sayur_sayuran(Sumber Vitamin & Serat)\":\"Sangat Kurang - Porsi sayuran hijau sangat kecil dan kemungkinan kehilangan vitamin akibat pemasakan yang lama. Tidak mencukupi kebutuhan serat.\",\"buah_buahan(Sumber Mineral & Antioksidan)\":\"Defisit Total - Tidak terdapat buah dalam sajian, menyebabkan kekurangan vitamin penting.\",\"susu(Sumber Kalsium & Fosfor)\":\"Kurang - Protein dan kalsium hanya berasal dari tahu, sangat kurang untuk pertumbuhan tulang terutama bagi anak dan ibu hamil.\"}",
+          "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C."
+        }
+      },
+      "local_transaction_hash": "38c403a1ab81caea67424ceadeb2c9625bed0e76b11ddcdde28c76e645476d22"
+    },
+    "previous_block_hash": "080f9e9834c92c6422e55bdf1a2917ae1f0f957459469ffdc8b645f85302aa24"
+  },
+  {
+    "fabric_transaction_id": "60fadd36d30500f0a5f55b757096d9c0",
+    "timestamp": "2026-04-14T23:35:13.864Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-A2HFPGVI telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-14T23:35:05.000000Z",
+          "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C."
+        },
+        "new_data": {
+          "status": "Pending",
+          "updated_at": "2026-04-14 23:35:09",
+          "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C.\n\n Kesimpulan: Layak Konsumsi",
+          "blockchainHash": "TX-4FK6IPIYI626-MCK"
+        }
+      },
+      "local_transaction_hash": "474323eecc81c3648b751e62bf2621e74c3c6b8c308b2912e28db99e5a0f0e8c"
+    },
+    "previous_block_hash": "293688a713dfb4d58a70444b7ddf512268a0d88d25cc0c31a7a848b114acd83f"
+  },
+  {
+    "fabric_transaction_id": "12ecede909821651b4a25a2d6c0fc808",
+    "timestamp": "2026-04-15T00:08:48.685Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.19",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-A2HFPGVI telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "Pending",
+          "updated_at": "2026-04-14T23:35:09.000000Z"
+        },
+        "new_data": {
+          "status": "Diterima",
+          "updated_at": "2026-04-15 00:08:44"
+        }
+      },
+      "local_transaction_hash": "e6749fd6a91927cfd0ebc751b59a7f1189dc14202e9414eb6df425e1b4f595dd"
+    },
+    "previous_block_hash": "20d15aec5ebf81bc30a63bd7d011df2dccaa2a561d66042847e829b30f54cbb6"
+  },
+  {
+    "fabric_transaction_id": "0cf57f8c97510d1d7cdb40b1e8235400",
+    "timestamp": "2026-04-15T00:08:48.691Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.19",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "bukti_kotak_diterima",
+      "action": "created",
+      "title": "Penerbitan Bukti Penerimaan",
+      "description": "Bukti Kotak Diterima valid disubmit oleh user untuk kotak MBG-A2HFPGVI.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "user_id": 2,
+          "kotak_mbg_id": 2,
+          "code": "MBG-A2HFPGVI",
+          "feedback": "makanannya enak",
+          "imageUrl": "media/kotak_mbg/bukti_kotak_diterima/post/temp/20260415_000844_new.jpeg",
+          "blockchainHash": "281eaa5633ddd08f07c043555718fd278541727fa006c3aa3ca001124d0e189b",
+          "updated_at": "2026-04-15T00:08:44.000000Z",
+          "created_at": "2026-04-15T00:08:44.000000Z",
+          "id": 1,
+          "kotak_mbg": {
+            "id": 2,
+            "code": "MBG-A2HFPGVI",
+            "name": "Makanan Standar",
+            "status": "Diterima",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260414_233452_new.jpg",
+            "deskripsi_gizi": "Sajian ini didominasi oleh karbohidrat dari nasi putih. Protein yang ada berasal dari sumber nabati (tahu), yang mana bioavailabilitasnya lebih rendah dibandingkan protein hewani. Kandungan mikronutrien penting seperti Zat Besi, Zinc, Kalsium, dan Vitamin A sangatlah rendah, menciptakan risiko defisiensi zat gizi mikro tersembunyi jika porsi ini dikonsumsi terus menerus tanpa variasi.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "Kurang - Protein dan kalsium hanya berasal dari tahu, sangat kurang untuk pertumbuhan tulang terutama bagi anak dan ibu hamil.",
+              "makanan_pokok(Sumber Karbohidrat)": "Cukup - Nasi putih memberikan energi utama, namun kurangi porsi untuk balita.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "Sangat Kurang - Porsi sayuran hijau sangat kecil dan kemungkinan kehilangan vitamin akibat pemasakan yang lama. Tidak mencukupi kebutuhan serat.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "Defisit Total - Tidak terdapat buah dalam sajian, menyebabkan kekurangan vitamin penting.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "Sedang - Tahu (NABATI) menyediakan protein, namun piring ini mutlak membutuhkan tambahan protein hewani (telur, ikan, daging)."
+            },
+            "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C.\n\n Kesimpulan: Layak Konsumsi",
+            "blockchainHash": "TX-4FK6IPIYI626-MCK",
+            "created_at": "2026-04-14T23:34:52.000000Z",
+            "updated_at": "2026-04-15T00:08:44.000000Z"
+          }
+        }
+      },
+      "local_transaction_hash": "281eaa5633ddd08f07c043555718fd278541727fa006c3aa3ca001124d0e189b"
+    },
+    "previous_block_hash": "28645d50e1b934d1331cef2380fd2c4a2f930a61789e4469a767786cb1d860b9"
+  },
+  {
+    "fabric_transaction_id": "731bb55ae833d13274ebb1248fbd6885",
+    "timestamp": "2026-04-15T00:08:53.070Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.19",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "bukti_kotak_diterima",
+      "action": "created",
+      "title": "Penambahan Bukti Kotak Diterima",
+      "description": "Bukti Kotak Diterima dengan kode kotak MBG MBG-A2HFPGVI telah diterima.",
+      "state_transition": {
+        "old_data": {
+          "kotak_mbg": {
+            "id": 2,
+            "code": "MBG-A2HFPGVI",
+            "name": "Makanan Standar",
+            "status": "Pending",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260414_233452_new.jpg",
+            "deskripsi_gizi": "Sajian ini didominasi oleh karbohidrat dari nasi putih. Protein yang ada berasal dari sumber nabati (tahu), yang mana bioavailabilitasnya lebih rendah dibandingkan protein hewani. Kandungan mikronutrien penting seperti Zat Besi, Zinc, Kalsium, dan Vitamin A sangatlah rendah, menciptakan risiko defisiensi zat gizi mikro tersembunyi jika porsi ini dikonsumsi terus menerus tanpa variasi.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "Kurang - Protein dan kalsium hanya berasal dari tahu, sangat kurang untuk pertumbuhan tulang terutama bagi anak dan ibu hamil.",
+              "makanan_pokok(Sumber Karbohidrat)": "Cukup - Nasi putih memberikan energi utama, namun kurangi porsi untuk balita.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "Sangat Kurang - Porsi sayuran hijau sangat kecil dan kemungkinan kehilangan vitamin akibat pemasakan yang lama. Tidak mencukupi kebutuhan serat.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "Defisit Total - Tidak terdapat buah dalam sajian, menyebabkan kekurangan vitamin penting.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "Sedang - Tahu (NABATI) menyediakan protein, namun piring ini mutlak membutuhkan tambahan protein hewani (telur, ikan, daging)."
+            },
+            "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C.\n\n Kesimpulan: Layak Konsumsi",
+            "blockchainHash": "TX-4FK6IPIYI626-MCK",
+            "created_at": "2026-04-14T23:34:52.000000Z",
+            "updated_at": "2026-04-14T23:35:09.000000Z"
+          }
+        },
+        "new_data": {
+          "user_id": 2,
+          "kotak_mbg_id": 2,
+          "code": "MBG-A2HFPGVI",
+          "feedback": "makanannya enak",
+          "imageUrl": "media/kotak_mbg/bukti_kotak_diterima/post/temp/20260415_000844_new.jpeg",
+          "blockchainHash": "281eaa5633ddd08f07c043555718fd278541727fa006c3aa3ca001124d0e189b",
+          "updated_at": "2026-04-15T00:08:44.000000Z",
+          "created_at": "2026-04-15T00:08:44.000000Z",
+          "id": 1,
+          "kotak_mbg": {
+            "id": 2,
+            "code": "MBG-A2HFPGVI",
+            "name": "Makanan Standar",
+            "status": "Diterima",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260414_233452_new.jpg",
+            "deskripsi_gizi": "Sajian ini didominasi oleh karbohidrat dari nasi putih. Protein yang ada berasal dari sumber nabati (tahu), yang mana bioavailabilitasnya lebih rendah dibandingkan protein hewani. Kandungan mikronutrien penting seperti Zat Besi, Zinc, Kalsium, dan Vitamin A sangatlah rendah, menciptakan risiko defisiensi zat gizi mikro tersembunyi jika porsi ini dikonsumsi terus menerus tanpa variasi.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "Kurang - Protein dan kalsium hanya berasal dari tahu, sangat kurang untuk pertumbuhan tulang terutama bagi anak dan ibu hamil.",
+              "makanan_pokok(Sumber Karbohidrat)": "Cukup - Nasi putih memberikan energi utama, namun kurangi porsi untuk balita.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "Sangat Kurang - Porsi sayuran hijau sangat kecil dan kemungkinan kehilangan vitamin akibat pemasakan yang lama. Tidak mencukupi kebutuhan serat.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "Defisit Total - Tidak terdapat buah dalam sajian, menyebabkan kekurangan vitamin penting.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "Sedang - Tahu (NABATI) menyediakan protein, namun piring ini mutlak membutuhkan tambahan protein hewani (telur, ikan, daging)."
+            },
+            "deskripsi_kelayakan": "Sajian ini TIDAK LAYAK untuk memenuhi kebutuhan pertumbuhan optimal anak atau kebutuhan nutrisi ibu hamil/menyusui, terutama di wilayah 3T dimana defisiensi mikronutrien sering terjadi. Hidangan ini hanya mampu memenuhi sebagian kebutuhan kalori dan protein nabati minimal. SARAN PENGUATAN: 1) Tambahkan satu butir telur rebus/ikan sebagai sumber protein hewani gizi tinggi. 2) Lipatgandakan porsi sayuran (hijau/oranye). 3) Berikan buah-buahan lokal untuk vitamin C.\n\n Kesimpulan: Layak Konsumsi",
+            "blockchainHash": "TX-4FK6IPIYI626-MCK",
+            "created_at": "2026-04-14T23:34:52.000000Z",
+            "updated_at": "2026-04-15T00:08:44.000000Z"
+          }
+        }
+      },
+      "local_transaction_hash": "8da17a89c97e0bcdfd59d3f38939962046fe53f51347d357067b4024ebebdd79"
+    },
+    "previous_block_hash": "46683ec5dd498e031e1ea2924067f19bf1886ef2da2a94a16650e83844943296"
+  },
+  {
+    "fabric_transaction_id": "b67947cb5b0071737f1eb12e22df5e9c",
+    "timestamp": "2026-04-15T00:11:06.295Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 3,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama Gina telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Gina",
+          "email": "vendor@mbg.com",
+          "password": "$2y$12$ufR4kjrZv2CPqfZuwgMSEekZAKsbHN6SZfjmZjgJocedozhakVJQS",
+          "role": "admin",
+          "updated_at": "2026-04-15 00:11:01",
+          "created_at": "2026-04-15 00:11:01",
+          "id": 3
+        }
+      },
+      "local_transaction_hash": "3d2b95188368ce1e7454b5f088e4f47808828af9e3b3a0386c1ee50f94b70f16"
+    },
+    "previous_block_hash": "73c9093228ebfe71fe487336c35ccd3dc952a9e5e3b037a1a55a9c0ff7e66b11"
+  },
+  {
+    "fabric_transaction_id": "17a9c5d7af1ce72cd97e1e3018db9f6b",
+    "timestamp": "2026-04-15T00:11:41.911Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 4,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama Nurdin telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Nurdin",
+          "email": "karyawan@mbg.com",
+          "password": "$2y$12$pKehjmrbsN98kxzhWWwaS.WT97mgF5iOXYoqwIxk57qvXQg6z5uBi",
+          "role": "karyawan",
+          "updated_at": "2026-04-15 00:11:37",
+          "created_at": "2026-04-15 00:11:37",
+          "id": 4
+        }
+      },
+      "local_transaction_hash": "9830439ac9b4053097aa57ac5d0157c19fb4e8a6baf699797f5052de3a9dc816"
+    },
+    "previous_block_hash": "599d7a304e3393af0c2050fd895e2b52c808143c57a1de6065042cd02fba38a7"
+  },
+  {
+    "fabric_transaction_id": "36fac21a2165cbad5dcf4dfe7c2ffd46",
+    "timestamp": "2026-04-15T00:37:53.748Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "127.0.0.1",
+      "user_agent": "Symfony",
+      "location": "37.4056, -122.0775"
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama admin telah berhasil dibuat oleh Sistem.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "admin",
+          "email": "admin@address.com",
+          "password": "$2y$12$kCLkUNZjIK5uEQnQ4HI1P.66CraSBbYiBjXEGpbKRXiEkBMNwuiU6",
+          "updated_at": "2026-04-15 00:37:49",
+          "created_at": "2026-04-15 00:37:49",
+          "id": 1
+        }
+      },
+      "local_transaction_hash": "06c4fd6e9fe6afcad01cdf019e4bc0a43e12f1cf50c170fd1b0cefaf189bef05"
+    },
+    "previous_block_hash": "8530f15e0a05082aab7c0e8b9f08d879c70783ae8884a2b02817aa50ffb1f6c9"
+  },
+  {
+    "fabric_transaction_id": "b3fa1f6136f8b01f2803e62d1533f66c",
+    "timestamp": "2026-04-15T01:09:07.402Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama budi telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "budi",
+          "email": "vendor@mbg.com",
+          "password": "$2y$12$GlyspEdyu8Nq/d/xudoVGOIXZQDpV3Z.NcaqZFgmnb5Jy7v7XhN9m",
+          "role": "admin",
+          "updated_at": "2026-04-15 01:09:02",
+          "created_at": "2026-04-15 01:09:02",
+          "id": 2
+        }
+      },
+      "local_transaction_hash": "8932d857d4d7f5248768bde64fb819bc47b2093ccb441b4804a41cbd66ebf39f"
+    },
+    "previous_block_hash": "176a7f0f0fd0623eb4236466ce0abc9ddcbee787ce1940dd6332cc809ac23e71"
+  },
+  {
+    "fabric_transaction_id": "66cf3717b76b9d184d5570af95d888b2",
+    "timestamp": "2026-04-15T01:09:31.922Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 3,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama Nurdin telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Nurdin",
+          "email": "karyawan@mbg.com",
+          "password": "$2y$12$jmYZ1ZWCWqSvWdxuuh5AveQ3N1R3msGDBoRhKO70UbyyfTk40UmL.",
+          "role": "karyawan",
+          "updated_at": "2026-04-15 01:09:27",
+          "created_at": "2026-04-15 01:09:27",
+          "id": 3
+        }
+      },
+      "local_transaction_hash": "ad26ef4ccf80f3f28ab80e6ead99b57d1e917fc49e5c6a4ca7ae816c823f9fc5"
+    },
+    "previous_block_hash": "9dfea432fea0d6eace437b5bd90f489cc777a628874922ef5b65871a99fb38b5"
+  },
+  {
+    "fabric_transaction_id": "0b260acba214a90d82f60038ca8be299",
+    "timestamp": "2026-04-15T01:12:33.186Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 4,
+      "table_name": "users",
+      "action": "created",
+      "title": "Pembuatan Akun Pengguna",
+      "description": "Akun dengan nama raihan telah berhasil dibuat oleh admin.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "raihan",
+          "email": "aexvahan@gmail.com",
+          "password": "$2y$12$wBkG1uXBeh05Bn2EKLwG2e83LI.2FAr08c1CmaTsq0jOFZ/5BmbhS",
+          "role": "penerima",
+          "updated_at": "2026-04-15 01:12:23",
+          "created_at": "2026-04-15 01:12:23",
+          "id": 4
+        }
+      },
+      "local_transaction_hash": "b91c580b3c78c23453fc9ccc7bc49952a13267050db125f555692124f977096a"
+    },
+    "previous_block_hash": "eec8866d50adfb3a0754279dd416710f6aea504a034bda969d4ca485a7c52e27"
+  },
+  {
+    "fabric_transaction_id": "a86ea9d060b7c8bf74023ebcd153660d",
+    "timestamp": "2026-04-15T01:27:53.901Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-SE2HQXQT telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Nasi Padang",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_012749_new.jpg",
+          "code": "MBG-SE2HQXQT",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T01:27:49.000000Z",
+          "created_at": "2026-04-15T01:27:49.000000Z",
+          "id": 1
+        }
+      },
+      "local_transaction_hash": "9c17eea9a8ab2f05520acba76ec26e9004c0e329b6e118b715a0868098c325ab"
+    },
+    "previous_block_hash": "07384406d9cbbe6140ea2e0b3fbb218b22fff89f1b3c6364bd75edde5dd2cc6c"
+  },
+  {
+    "fabric_transaction_id": "ba9d632f6542ce068ad1e78350c952b2",
+    "timestamp": "2026-04-15T01:28:09.990Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-SE2HQXQT telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T01:27:49.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-15 01:28:05",
+          "deskripsi_gizi": "Sajian ini adalah Nasi Padang lengkap yang sangat tinggi energi, protein, lemak, dan natrium. Porsi ini sangat padat gizi, terutama protein hewan (ayam) dan nabati (tempe), baik untuk pertumbuhan anak dan energi ibu hamil/menyusui. Namun, kandungan lemah jenuh dan garam yang tinggi perlu batasan.",
+          "json_gizi": "{\"makanan_pokok(Sumber Karbohidrat)\":\"[Cukup] - Nasi putih memberikan energi instan.\",\"lauk_pauk(Sumber Protein Hewani & Nabati)\":\"[Sangat Tinggi] - Ayam bakar, tempe orek, dan gulai memberikan protein sangat baik untuk pertumbuhan otot.\",\"sayur_sayuran(Sumber Vitamin & Serat)\":\"[Sedang] - Gulai nangka, tumis sayur, dan lalapan menyumbang serat dan mikronutrien.\",\"buah_buahan(Sumber Mineral & Antioksidan)\":\"[Tidak Ada] - Tidak terlihat buah pada sajian ini.\",\"susu(Sumber Kalsium & Fosfor)\":\"[Tidak Ada] - Tidak ada susu\\/olahan susu secara langsung.\"}",
+          "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik."
+        }
+      },
+      "local_transaction_hash": "d8fe646c10726edba1c33e43c235db453742f71c5e43d791582f88592c4f108c"
+    },
+    "previous_block_hash": "e001e03b71eb7f7ecf7bef4bde8a10c5f1b6dcd29d96a57aa5e610afa9e58380"
+  },
+  {
+    "fabric_transaction_id": "7fe4fffb4c830560b05122719503cb83",
+    "timestamp": "2026-04-15T01:28:14.159Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-SE2HQXQT telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-15T01:28:05.000000Z",
+          "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik."
+        },
+        "new_data": {
+          "status": "Pending",
+          "updated_at": "2026-04-15 01:28:10",
+          "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik.\n\n Kesimpulan: Gizi Tidak Seimbang (Tidak Layak)",
+          "blockchainHash": "TX-CE5EVJJZOLEZ-MCK"
+        }
+      },
+      "local_transaction_hash": "81ca4f95d0cbbb690b20f3a9d40fd26647e82149f074cc2f24a9fc8fce07dc90"
+    },
+    "previous_block_hash": "5e361728799ab6c2f5d898a2ada7b6048b646b8db77053f81017e776d0770f94"
+  },
+  {
+    "fabric_transaction_id": "e1082b6af951b22fb8b54e3a65403da2",
+    "timestamp": "2026-04-15T02:24:23.434Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.20",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-SE2HQXQT telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "Pending",
+          "updated_at": "2026-04-15T01:28:10.000000Z"
+        },
+        "new_data": {
+          "status": "Diterima",
+          "updated_at": "2026-04-15 02:24:19"
+        }
+      },
+      "local_transaction_hash": "409ff6434eaa094690e08bb66d7f72b87b2d6782b18e7fb8d5832471152c94ce"
+    },
+    "previous_block_hash": "726f65733f6297baafd33066a523d8e6d3c45d2f13e1cb51e8da35e8cf067205"
+  },
+  {
+    "fabric_transaction_id": "44edb3c3c65b805c6dd5785d329cbd59",
+    "timestamp": "2026-04-15T02:24:23.465Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.20",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "bukti_kotak_diterima",
+      "action": "created",
+      "title": "Penerbitan Bukti Penerimaan",
+      "description": "Bukti Kotak Diterima valid disubmit oleh user untuk kotak MBG-SE2HQXQT.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "user_id": 2,
+          "kotak_mbg_id": 1,
+          "code": "MBG-SE2HQXQT",
+          "feedback": "enak banget ini mah",
+          "imageUrl": "media/kotak_mbg/bukti_kotak_diterima/post/temp/20260415_022419_new.jpg",
+          "blockchainHash": "3897a9169da5fb82dac36fa17ba12e594e344254dea4defe3db3a825a25469c4",
+          "updated_at": "2026-04-15T02:24:19.000000Z",
+          "created_at": "2026-04-15T02:24:19.000000Z",
+          "id": 1,
+          "kotak_mbg": {
+            "id": 1,
+            "code": "MBG-SE2HQXQT",
+            "name": "Nasi Padang",
+            "status": "Diterima",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260415_012749_new.jpg",
+            "deskripsi_gizi": "Sajian ini adalah Nasi Padang lengkap yang sangat tinggi energi, protein, lemak, dan natrium. Porsi ini sangat padat gizi, terutama protein hewan (ayam) dan nabati (tempe), baik untuk pertumbuhan anak dan energi ibu hamil/menyusui. Namun, kandungan lemah jenuh dan garam yang tinggi perlu batasan.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "[Tidak Ada] - Tidak ada susu/olahan susu secara langsung.",
+              "makanan_pokok(Sumber Karbohidrat)": "[Cukup] - Nasi putih memberikan energi instan.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "[Sedang] - Gulai nangka, tumis sayur, dan lalapan menyumbang serat dan mikronutrien.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "[Tidak Ada] - Tidak terlihat buah pada sajian ini.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "[Sangat Tinggi] - Ayam bakar, tempe orek, dan gulai memberikan protein sangat baik untuk pertumbuhan otot."
+            },
+            "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik.\n\n Kesimpulan: Gizi Tidak Seimbang (Tidak Layak)",
+            "blockchainHash": "TX-CE5EVJJZOLEZ-MCK",
+            "created_at": "2026-04-15T01:27:49.000000Z",
+            "updated_at": "2026-04-15T02:24:19.000000Z"
+          }
+        }
+      },
+      "local_transaction_hash": "3897a9169da5fb82dac36fa17ba12e594e344254dea4defe3db3a825a25469c4"
+    },
+    "previous_block_hash": "d5921c5584253db1285b9a80c1d2ca77656abcbe3df4ec56a5776c505dfab3e8"
+  },
+  {
+    "fabric_transaction_id": "c990a0fd402280021b7853968a9dc9e0",
+    "timestamp": "2026-04-15T02:24:27.631Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.1.20",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 1,
+      "table_name": "bukti_kotak_diterima",
+      "action": "created",
+      "title": "Penambahan Bukti Kotak Diterima",
+      "description": "Bukti Kotak Diterima dengan kode kotak MBG MBG-SE2HQXQT telah diterima.",
+      "state_transition": {
+        "old_data": {
+          "kotak_mbg": {
+            "id": 1,
+            "code": "MBG-SE2HQXQT",
+            "name": "Nasi Padang",
+            "status": "Pending",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260415_012749_new.jpg",
+            "deskripsi_gizi": "Sajian ini adalah Nasi Padang lengkap yang sangat tinggi energi, protein, lemak, dan natrium. Porsi ini sangat padat gizi, terutama protein hewan (ayam) dan nabati (tempe), baik untuk pertumbuhan anak dan energi ibu hamil/menyusui. Namun, kandungan lemah jenuh dan garam yang tinggi perlu batasan.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "[Tidak Ada] - Tidak ada susu/olahan susu secara langsung.",
+              "makanan_pokok(Sumber Karbohidrat)": "[Cukup] - Nasi putih memberikan energi instan.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "[Sedang] - Gulai nangka, tumis sayur, dan lalapan menyumbang serat dan mikronutrien.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "[Tidak Ada] - Tidak terlihat buah pada sajian ini.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "[Sangat Tinggi] - Ayam bakar, tempe orek, dan gulai memberikan protein sangat baik untuk pertumbuhan otot."
+            },
+            "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik.\n\n Kesimpulan: Gizi Tidak Seimbang (Tidak Layak)",
+            "blockchainHash": "TX-CE5EVJJZOLEZ-MCK",
+            "created_at": "2026-04-15T01:27:49.000000Z",
+            "updated_at": "2026-04-15T01:28:10.000000Z"
+          }
+        },
+        "new_data": {
+          "user_id": 2,
+          "kotak_mbg_id": 1,
+          "code": "MBG-SE2HQXQT",
+          "feedback": "enak banget ini mah",
+          "imageUrl": "media/kotak_mbg/bukti_kotak_diterima/post/temp/20260415_022419_new.jpg",
+          "blockchainHash": "3897a9169da5fb82dac36fa17ba12e594e344254dea4defe3db3a825a25469c4",
+          "updated_at": "2026-04-15T02:24:19.000000Z",
+          "created_at": "2026-04-15T02:24:19.000000Z",
+          "id": 1,
+          "kotak_mbg": {
+            "id": 1,
+            "code": "MBG-SE2HQXQT",
+            "name": "Nasi Padang",
+            "status": "Diterima",
+            "imagesUrl": "media/kotak_mbg/post/temp/20260415_012749_new.jpg",
+            "deskripsi_gizi": "Sajian ini adalah Nasi Padang lengkap yang sangat tinggi energi, protein, lemak, dan natrium. Porsi ini sangat padat gizi, terutama protein hewan (ayam) dan nabati (tempe), baik untuk pertumbuhan anak dan energi ibu hamil/menyusui. Namun, kandungan lemah jenuh dan garam yang tinggi perlu batasan.",
+            "json_gizi": {
+              "susu(Sumber Kalsium & Fosfor)": "[Tidak Ada] - Tidak ada susu/olahan susu secara langsung.",
+              "makanan_pokok(Sumber Karbohidrat)": "[Cukup] - Nasi putih memberikan energi instan.",
+              "sayur_sayuran(Sumber Vitamin & Serat)": "[Sedang] - Gulai nangka, tumis sayur, dan lalapan menyumbang serat dan mikronutrien.",
+              "buah_buahan(Sumber Mineral & Antioksidan)": "[Tidak Ada] - Tidak terlihat buah pada sajian ini.",
+              "lauk_pauk(Sumber Protein Hewani & Nabati)": "[Sangat Tinggi] - Ayam bakar, tempe orek, dan gulai memberikan protein sangat baik untuk pertumbuhan otot."
+            },
+            "deskripsi_kelayakan": "Sajian ini layak diberikan, sangat bagus untuk memenuhi kebutuhan protein dan energi tinggi pada anak pertumbuhan (6-12 tahun), ibu hamil, dan ibu menyusui, terutama di wilayah 3T untuk mencegah stunting. Namun, porsi mungkin terlalu besar untuk balita. Disarankan mengurangi porsi nasi sedikit, membatasi kuah santan, dan menambahkan buah segar setelah makan untuk hidrasi yang lebih baik.\n\n Kesimpulan: Gizi Tidak Seimbang (Tidak Layak)",
+            "blockchainHash": "TX-CE5EVJJZOLEZ-MCK",
+            "created_at": "2026-04-15T01:27:49.000000Z",
+            "updated_at": "2026-04-15T02:24:19.000000Z"
+          }
+        }
+      },
+      "local_transaction_hash": "6c887efb4911d9a6d60a1194f1d61b1a6c5a3ccc3833d2fe9f97b3a9911564ce"
+    },
+    "previous_block_hash": "eadb6dbc79c82143241d99b53e69c361d6684c396c1418c71817bb49b223128f"
+  },
+  {
+    "fabric_transaction_id": "54036f94a00c1f1af453a3b1edd48059",
+    "timestamp": "2026-04-15T03:58:39.755Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-VRCW9QQ6 telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "AYAM",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_035835_new.jpg",
+          "code": "MBG-VRCW9QQ6",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T03:58:35.000000Z",
+          "created_at": "2026-04-15T03:58:35.000000Z",
+          "id": 2
+        }
+      },
+      "local_transaction_hash": "305275aece79cb24c299cdd978187da57c1a8960bedd97feca2b7f5c36fe7422"
+    },
+    "previous_block_hash": "c5a7769f712dcfb22b13f479ae076ad912ca182e372ea58c2a61c6985253fa14"
+  },
+  {
+    "fabric_transaction_id": "48e5317da27ac0b29ce4a7975db25f63",
+    "timestamp": "2026-04-15T03:58:45.863Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-VRCW9QQ6 telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T03:58:35.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYSIS_FAILED",
+          "updated_at": "2026-04-15 03:58:39",
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_035835_new.jpg is not a file\n\nRAW RESPONSE:\n"
+        }
+      },
+      "local_transaction_hash": "27a01f919d23e4d9605576922eda87da0ab613982196219af204a0000ac9ecd6"
+    },
+    "previous_block_hash": "5af75f8b10e5e245a303befb11be5b5deab32e92876123b11b18f278de7aa9a4"
+  },
+  {
+    "fabric_transaction_id": "8254b5b1b1186ad44aff87e8c754d654",
+    "timestamp": "2026-04-15T04:00:06.782Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 3,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-OWLGR7YN telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "tumpeng",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_040002_new.jfif",
+          "code": "MBG-OWLGR7YN",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T04:00:02.000000Z",
+          "created_at": "2026-04-15T04:00:02.000000Z",
+          "id": 3
+        }
+      },
+      "local_transaction_hash": "3a5df793d9511a39dd126bd1a43a493dfbfdb3fa46adb3bd65d1dc3a044df184"
+    },
+    "previous_block_hash": "a4add6dca5726cad77f8a4e38a119fdd0fefe8ef666f4477b80bfb83876b502a"
+  },
+  {
+    "fabric_transaction_id": "ae51b1d022506a109fa225b3c22d1170",
+    "timestamp": "2026-04-15T04:00:11.249Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 3,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-OWLGR7YN telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T04:00:02.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYSIS_FAILED",
+          "updated_at": "2026-04-15 04:00:06",
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_040002_new.jfif is not a file\n\nRAW RESPONSE:\n"
+        }
+      },
+      "local_transaction_hash": "aad05da19b072fa28a6c999b43e18c14ae5704ea3abe2dd7eff1f31cf93a0e9d"
+    },
+    "previous_block_hash": "300d52844fc7533751762bb93eb0326260d6d04c0673a69836d9559b7b0d6180"
+  },
+  {
+    "fabric_transaction_id": "e8526b24303a3dbceb7f9fb948e05780",
+    "timestamp": "2026-04-15T04:03:45.350Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 4,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-COMFAZWO telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "tes",
+          "imagesUrl": null,
+          "code": "MBG-COMFAZWO",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T04:03:41.000000Z",
+          "created_at": "2026-04-15T04:03:41.000000Z",
+          "id": 4
+        }
+      },
+      "local_transaction_hash": "87622dae582754aa3998dd67fcfe4620edf058cc769b2b3c9149cfc92e0b1aa4"
+    },
+    "previous_block_hash": "5f84517ebbb31bcf265ce22d8ce55ba5a64cf7ad53d72feef81c32081a867552"
+  },
+  {
+    "fabric_transaction_id": "989f21f69fae44391dcf00e55ac747fc",
+    "timestamp": "2026-04-15T04:06:13.584Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 5,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-BN75WONJ telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "tes",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_040609_new.jpg",
+          "code": "MBG-BN75WONJ",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T04:06:09.000000Z",
+          "created_at": "2026-04-15T04:06:09.000000Z",
+          "id": 5
+        }
+      },
+      "local_transaction_hash": "1aaa862d15985556ef56ceb17a66f6ab18111d82b659d6dd227c2a3db6b559c9"
+    },
+    "previous_block_hash": "485b56a8da73519d819fc4e7f97ef3787302cf111b3c697594ee14aeec0aa4cb"
+  },
+  {
+    "fabric_transaction_id": "f496f9d1c0a69a23a036bb682738f1d0",
+    "timestamp": "2026-04-15T04:06:17.634Z",
+    "actor": {
+      "user_id": 2,
+      "ip_address": "10.40.3.49",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 5,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-BN75WONJ telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T04:06:09.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYSIS_FAILED",
+          "updated_at": "2026-04-15 04:06:13",
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_040609_new.jpg is not a file\n\nRAW RESPONSE:\n"
+        }
+      },
+      "local_transaction_hash": "ab1b3de09c1433ecc9cafdd0214ed16b5cac363c96ffc3dd0ac1a98ba142d55a"
+    },
+    "previous_block_hash": "cbcb8a4c5af692fd7fc9b567b9a6cfbddd77c723525b42934286b7c9d3700fda"
+  },
+  {
+    "fabric_transaction_id": "4d257bfd2444c9fd0c1ba8a9b2323976",
+    "timestamp": "2026-04-15T05:04:18.724Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 5,
+      "table_name": "kotak_mbg",
+      "action": "deleted",
+      "title": "Penghapusan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-BN75WONJ telah dihapus.",
+      "state_transition": {
+        "old_data": {
+          "id": 5,
+          "code": "MBG-BN75WONJ",
+          "name": "tes",
+          "status": "ANALYSIS_FAILED",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_040609_new.jpg",
+          "deskripsi_gizi": null,
+          "json_gizi": null,
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_040609_new.jpg is not a file\n\nRAW RESPONSE:\n",
+          "blockchainHash": null,
+          "created_at": "2026-04-15T04:06:09.000000Z",
+          "updated_at": "2026-04-15T04:06:13.000000Z",
+          "row_num": 1
+        },
+        "new_data": null
+      },
+      "local_transaction_hash": "713400687d8e2554bcbda4a1401ff7a99a146e9a416f50ca1fc2f410161e5dff"
+    },
+    "previous_block_hash": "3a5440940bb04f1848f8e24d407a2445674a41cbe8de1d77505060f4b3824d90"
+  },
+  {
+    "fabric_transaction_id": "c256fa08225da88ce5001cad2b7aec9f",
+    "timestamp": "2026-04-15T05:04:23.154Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 4,
+      "table_name": "kotak_mbg",
+      "action": "deleted",
+      "title": "Penghapusan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-COMFAZWO telah dihapus.",
+      "state_transition": {
+        "old_data": {
+          "id": 4,
+          "code": "MBG-COMFAZWO",
+          "name": "tes",
+          "status": "PENDING_ANALYSIS",
+          "imagesUrl": null,
+          "deskripsi_gizi": null,
+          "json_gizi": null,
+          "deskripsi_kelayakan": null,
+          "blockchainHash": null,
+          "created_at": "2026-04-15T04:03:41.000000Z",
+          "updated_at": "2026-04-15T04:03:41.000000Z",
+          "row_num": 2
+        },
+        "new_data": null
+      },
+      "local_transaction_hash": "4ad8744624ed1ac654c8f0f6200d76713da0931471d38f2567d83057e12fe518"
+    },
+    "previous_block_hash": "cd9d467352203f7796c3960051e6b2885d73825456bdcce2befb8f59818a05c4"
+  },
+  {
+    "fabric_transaction_id": "161fb15428de443dd0d38198120d3390",
+    "timestamp": "2026-04-15T05:04:27.232Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 3,
+      "table_name": "kotak_mbg",
+      "action": "deleted",
+      "title": "Penghapusan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-OWLGR7YN telah dihapus.",
+      "state_transition": {
+        "old_data": {
+          "id": 3,
+          "code": "MBG-OWLGR7YN",
+          "name": "tumpeng",
+          "status": "ANALYSIS_FAILED",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_040002_new.jfif",
+          "deskripsi_gizi": null,
+          "json_gizi": null,
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_040002_new.jfif is not a file\n\nRAW RESPONSE:\n",
+          "blockchainHash": null,
+          "created_at": "2026-04-15T04:00:02.000000Z",
+          "updated_at": "2026-04-15T04:00:06.000000Z",
+          "row_num": 3
+        },
+        "new_data": null
+      },
+      "local_transaction_hash": "d96d7ef47bb4a1c77e4d9a02c82961551cabc41c55e16ac56c23346e989fd178"
+    },
+    "previous_block_hash": "cb5888c1389bfc3c597057a356867edc8fd2e476b678a09e3347dcaa69f7a9ad"
+  },
+  {
+    "fabric_transaction_id": "c7bf215aa85c82a51070b2c8f9ab0bb7",
+    "timestamp": "2026-04-15T05:04:31.342Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 2,
+      "table_name": "kotak_mbg",
+      "action": "deleted",
+      "title": "Penghapusan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-VRCW9QQ6 telah dihapus.",
+      "state_transition": {
+        "old_data": {
+          "id": 2,
+          "code": "MBG-VRCW9QQ6",
+          "name": "AYAM",
+          "status": "ANALYSIS_FAILED",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_035835_new.jpg",
+          "deskripsi_gizi": null,
+          "json_gizi": null,
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_035835_new.jpg is not a file\n\nRAW RESPONSE:\n",
+          "blockchainHash": null,
+          "created_at": "2026-04-15T03:58:35.000000Z",
+          "updated_at": "2026-04-15T03:58:39.000000Z",
+          "row_num": 4
+        },
+        "new_data": null
+      },
+      "local_transaction_hash": "a1c463a545984f63b6f625c2b2ef927a75ff8527e98c0ea041b8748bcd177603"
+    },
+    "previous_block_hash": "e71589c17c440ec92d27436f0beae7af9639f9b879a7a89973e958dedb51bd41"
+  },
+  {
+    "fabric_transaction_id": "99e566f791a6df72629fe349698d1beb",
+    "timestamp": "2026-04-15T05:05:13.090Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 6,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-ZDSMN8DP telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Makan Sehat",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_050509_new.jpeg",
+          "code": "MBG-ZDSMN8DP",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T05:05:09.000000Z",
+          "created_at": "2026-04-15T05:05:09.000000Z",
+          "id": 6
+        }
+      },
+      "local_transaction_hash": "4cbb4c9438577069fd74e752fa68fb96728358d1705ac835c760c94ce448be40"
+    },
+    "previous_block_hash": "c59179aa9bdb67680b1619e7562402977a3592cbb448f59e534b7d6c69e6f092"
+  },
+  {
+    "fabric_transaction_id": "f64a90ff6e2099116bfc0b8ef1738ece",
+    "timestamp": "2026-04-15T05:05:19.207Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 6,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-ZDSMN8DP telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T05:05:09.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYSIS_FAILED",
+          "updated_at": "2026-04-15 05:05:13",
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_050509_new.jpeg is not a file\n\nRAW RESPONSE:\n"
+        }
+      },
+      "local_transaction_hash": "f2243a981102040281f7838158a02d17862da1a694ccba55a7f053579e0e09a0"
+    },
+    "previous_block_hash": "a40e7ad847db0256d478bba7555b2c05a8798c174fa369a00aa180e07eebb14e"
+  },
+  {
+    "fabric_transaction_id": "2294f6bf9feb034594c8a72df666639d",
+    "timestamp": "2026-04-15T05:05:26.820Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 6,
+      "table_name": "kotak_mbg",
+      "action": "deleted",
+      "title": "Penghapusan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-ZDSMN8DP telah dihapus.",
+      "state_transition": {
+        "old_data": {
+          "id": 6,
+          "code": "MBG-ZDSMN8DP",
+          "name": "Makan Sehat",
+          "status": "ANALYSIS_FAILED",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_050509_new.jpeg",
+          "deskripsi_gizi": null,
+          "json_gizi": null,
+          "deskripsi_kelayakan": "ERROR: /var/www/html/public/media/kotak_mbg/post/temp/20260415_050509_new.jpeg is not a file\n\nRAW RESPONSE:\n",
+          "blockchainHash": null,
+          "created_at": "2026-04-15T05:05:09.000000Z",
+          "updated_at": "2026-04-15T05:05:13.000000Z",
+          "row_num": 1
+        },
+        "new_data": null
+      },
+      "local_transaction_hash": "d5599524c0a0c899ac3c87cb9522ee80897db48cb9edf1beadfee70eb474ec38"
+    },
+    "previous_block_hash": "19d6901291299ee15ecf3a1b07dccb2dd481d53e965c25c8f46fb806eaa8c6af"
+  },
+  {
+    "fabric_transaction_id": "1576b141fcd9dd5f2ece70a8cf769311",
+    "timestamp": "2026-04-15T05:06:11.078Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 7,
+      "table_name": "kotak_mbg",
+      "action": "created",
+      "title": "Pembuatan Kotak MBG",
+      "description": "Kotak MBG dengan code MBG-CADCSCHX telah dibuat.",
+      "state_transition": {
+        "old_data": null,
+        "new_data": {
+          "name": "Makan Sehat",
+          "imagesUrl": "media/kotak_mbg/post/temp/20260415_050607_new.jpeg",
+          "code": "MBG-CADCSCHX",
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T05:06:07.000000Z",
+          "created_at": "2026-04-15T05:06:07.000000Z",
+          "id": 7
+        }
+      },
+      "local_transaction_hash": "7198515f999f4852d66f56d8ae0f8597342fc8d8bb7cee17882acbcc1c904a13"
+    },
+    "previous_block_hash": "9f01d13d32780b58c278611314b640b76317a827e9df913cd09eaa28b3f54eb6"
+  },
+  {
+    "fabric_transaction_id": "ff886efc9b71d7fedde0f749c266881b",
+    "timestamp": "2026-04-15T05:06:23.504Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 7,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-CADCSCHX telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "PENDING_ANALYSIS",
+          "updated_at": "2026-04-15T05:06:07.000000Z"
+        },
+        "new_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-15 05:06:19",
+          "deskripsi_gizi": "Sajian ini adalah menu seimbang yang sangat baik dalam memenuhi kebutuhan protein dan kalsium harian anak sekolah, terutama berkat adanya ayam dan susu. Namun konten lemak jenuh sedikit tinggi karena proses penggorengan ayam, dan kekurangan serat karena jumlah sayuran yang terbatas serta tidak adanya buah segar.",
+          "json_gizi": "{\"makanan_pokok(Sumber Karbohidrat)\":\"SESUAI - Nasi putih sebagai sumber energi utama (sekitar 150g). Jumlahnya memadai untuk satu kali makan anak usia sekolah.\",\"lauk_pauk(Sumber Protein Hewani & Nabati)\":\"SANGAT BAIK - Komposisi ayam goreng krispi (sekitar 70g) dan tahu (sekitar 80g) memberikan asupan protein berkualitas tinggi yang esensial untuk mendukung petumbuhan jaringan dan pemulihan tubuh.\",\"sayur_sayuran(Sumber Vitamin & Serat)\":\"KURANG - Jumlah sayuran (sekitar 30g kol\\/wortel) dan jamur (sekitar 10g) sangat terbatas, sehingga asupan serat, vitamin C, dan mikronutrien masih kurang maksimal.\",\"buah_buahan(Sumber Mineral & Antioksidan)\":\"TIDAK ADA - Absennya buah segar (seperti pisang, pepaya, atau jeruk) menyebabkan hilangnya sumber alami vitamin C dan kalium.\",\"susu(Sumber Kalsium & Fosfor)\":\"SANGAT BAIK - Penambahan susu uht strawberi menyediakan kalsium dan lemak yang sangat dibutuhkan untuk pertumbuhan tulang pada tahap anak sekolah.\"}",
+          "deskripsi_kelayakan": "Menu ini sangat layak sebagai makanan program gizi sekolah karena protein dan kalsiumnya tinggi. Disarankan untuk menambah porsi sayur minimal 2-3 kali lipat dari volume saat ini. Kurangi frekuensi penyajian ayam krispi yang digoreng, dan secara bertahap ganti tahu goreng dengan metode masak lain. Penambahan buah segar (misalnya pepaya potong atau jeruk lokal) akan sangat meningkatkan asupan serat dan Vitamin C."
+        }
+      },
+      "local_transaction_hash": "7f40beb9b3d08f2268076f24a5a873e0cfaa83e791af153e05d4dafc1379eda4"
+    },
+    "previous_block_hash": "b42cd6baee1320e3f815d3b640136e2c818278285736ead55b293c4cb690d75d"
+  },
+  {
+    "fabric_transaction_id": "15050ce470fe03a514deafe77825c958",
+    "timestamp": "2026-04-15T05:06:29.661Z",
+    "actor": {
+      "user_id": 1,
+      "ip_address": "10.40.3.109",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "location": null
+    },
+    "asset_data": {
+      "subject_id": 7,
+      "table_name": "kotak_mbg",
+      "action": "updated",
+      "title": "Pembaruan Kotak MBG",
+      "description": "Data Kotak MBG dengan code MBG-CADCSCHX telah diperbarui.",
+      "state_transition": {
+        "old_data": {
+          "status": "ANALYZED",
+          "updated_at": "2026-04-15T05:06:19.000000Z",
+          "deskripsi_kelayakan": "Menu ini sangat layak sebagai makanan program gizi sekolah karena protein dan kalsiumnya tinggi. Disarankan untuk menambah porsi sayur minimal 2-3 kali lipat dari volume saat ini. Kurangi frekuensi penyajian ayam krispi yang digoreng, dan secara bertahap ganti tahu goreng dengan metode masak lain. Penambahan buah segar (misalnya pepaya potong atau jeruk lokal) akan sangat meningkatkan asupan serat dan Vitamin C."
+        },
+        "new_data": {
+          "status": "Pending",
+          "updated_at": "2026-04-15 05:06:23",
+          "deskripsi_kelayakan": "Menu ini sangat layak sebagai makanan program gizi sekolah karena protein dan kalsiumnya tinggi. Disarankan untuk menambah porsi sayur minimal 2-3 kali lipat dari volume saat ini. Kurangi frekuensi penyajian ayam krispi yang digoreng, dan secara bertahap ganti tahu goreng dengan metode masak lain. Penambahan buah segar (misalnya pepaya potong atau jeruk lokal) akan sangat meningkatkan asupan serat dan Vitamin C.\n\n Kesimpulan: Layak Konsumsi",
+          "blockchainHash": "TX-ISL6SXIVGFJM-MCK"
+        }
+      },
+      "local_transaction_hash": "0aac843cac6f0f3dc01b5f38591ca5e944f3337aa684fdf54066e48d58721f11"
+    },
+    "previous_block_hash": "81b53ace2b47136527235f9d6d74bebd7e397426b29089058a7d8ab1171c28cd"
+  }
+]

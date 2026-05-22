@@ -1,0 +1,117 @@
+services:
+  # --- DATABASE ---
+  db:
+    image: mysql:8.4
+    container_name: qven-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: qven
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - qven-network
+
+  # --- GRUP APACHE ---
+  apache:
+    build:
+      context: .
+      dockerfile: ./docker-apache/Dockerfile
+    container_name: qven-apache
+    profiles: ["apache"]
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - qven-network
+    depends_on:
+      - db
+
+  # --- GRUP NGINX ---
+  php-fpm:
+    build:
+      context: .
+      dockerfile: ./docker-nginx/Dockerfile
+    container_name: qven-php-fpm
+    profiles: ["nginx"]
+    tty: true
+    volumes:
+      - .:/var/www/html
+    networks:
+      - qven-network
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    container_name: qven-nginx
+    profiles: ["nginx"]
+    ports:
+      - "8000:80"
+      - "5173:5173"
+    volumes:
+      - .:/var/www/html
+      - ./docker-nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php-fpm
+    networks:
+      - qven-network
+
+  # --- SERVICE MACHINE LEARNING ---
+  
+  # ML-THINK: Analisis Gizi (Port 5000 -> 5002 agar tidak tabrakan)
+  ml-think:
+    build:
+      context: ./docker-ml
+      dockerfile: Dockerfile
+    container_name: qven-ml-think
+    ports:
+      - "5002:5000" 
+    volumes:
+      - ./docker-ml:/app
+    networks:
+      - qven-network
+
+  # ML-VISION: Image Comparison (Port 5000 -> 5001 & Support GPU)
+  ml-vision:
+    build:
+      context: ./docker-cvision
+      dockerfile: Dockerfile
+    container_name: qven-ml-vision
+    # Deployment resources agar bisa akses GPU NVIDIA jika ada
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./docker-cvision:/app
+      - hf_cache:/app/.cache/huggingface
+    networks:
+      - qven-network
+
+  # --- SERVICE BLOCKCHAIN GATEWAY ---
+  fabric-gateway:
+    build:
+      context: ./docker-fabric
+      dockerfile: Dockerfile
+    container_name: qven-fabric-gateway
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./docker-fabric:/app
+    networks:
+      - qven-network
+
+networks:
+  qven-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  hf_cache:
