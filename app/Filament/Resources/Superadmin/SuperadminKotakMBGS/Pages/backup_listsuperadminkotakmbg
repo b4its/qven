@@ -1,0 +1,127 @@
+<?php
+
+namespace App\Filament\Resources\Superadmin\SuperadminKotakMBGS\Pages;
+
+use App\Filament\Resources\Superadmin\SuperadminKotakMBGS\SuperadminKotakMBGResource;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
+use Illuminate\Support\Str;
+
+use function Laravel\Ai\agent;
+use Laravel\Ai\Files\Image;
+
+class ListSuperadminKotakMBGS extends ListRecords
+{
+    protected static string $resource = SuperadminKotakMBGResource::class;
+    protected static ?string $title = 'Daftar Kotak MBG';
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make()
+                ->label('Tambahkan Kotak MBG')
+                ->mutateFormDataUsing(function (array $data): array {
+                    $data['code'] = 'MBG-' . strtoupper(Str::random(8));
+                    $data['status'] = 'PENDING_ANALYSIS';
+                    return $data;
+                })
+                ->after(function ($record) {
+                    $this->analyzeImageWithGemini($record);
+                }),
+        ];
+    }
+
+    protected function analyzeImageWithGemini($record): void
+    {
+        if (!$record->imagesUrl) {
+            return;
+        }
+
+        $imagePath = public_path($record->imagesUrl);
+
+        $systemPrompt = "
+        Identitas & Peran:
+        Anda adalah seorang Pakar Nutrisi Klinis dengan spesialisasi dalam nutrisi metabolik, gizi olahraga, dan dietetik preventif. 
+        Anda memiliki pemahaman mendalam tentang biokimia pangan, fisiologi manusia, dan hubungan antara pola makan dengan penyakit kronis. 
+        Tugas Anda adalah memberikan konsultasi gizi yang berbasis bukti ilmiah (evidence-based) dan dipersonalisasi sesuai kebutuhan unik setiap individu.
+        Prinsip Kerja & Metodologi:
+        1. Analisis Bio-Individualitas: Jangan pernah memberikan saran generalis. Pertimbangkan usia, jenis kelamin, tingkat aktivitas, kondisi medis, dan tujuan spesifik (misalnya: hipertrofi otot, manajemen diabetes, atau penurunan lemak).
+        2. Akurasi Saintifik: Gunakan referensi dari lembaga kesehatan global (seperti WHO, FAO) dan pedoman gizi nasional (seperti Angka Kecukupan Gizi/AKG).
+        3. Perhitungan Presisi: Gunakan formula matematis yang diakui secara klinis untuk menentukan kebutuhan energi:
+        4. Distribusi Makronutrisi: Berikan rekomendasi protein, karbohidrat, dan lemak yang seimbang dengan penjelasan fungsional di balik setiap rasio yang disarankan.
+        Anda berfokus kepada kesehatan gizi yang diperoleh untuk tumbuh kembang anak, agar bisa mencegah terjadinya potensi stunting.
+        Deskripsi Kelayakan ini bertugas untuk menentukan apakah makanan yang ada pada gambar tersebut layak dikonsumsi atau tidak dari kandungan gizi yang sudah analisa.
+        Analisis gambar kotak makanan bergizi ini. 
+        Kembalikan HANYA format JSON tanpa markdown, dengan struktur key persis seperti ini: 
+        kalori (float), protein (float), 
+        lemak (float), karbohidrat (float), 
+        serat (float), kalsium (float), 
+        zat_besi (float), natrium (float), 
+        kalium (float), zinc (float), 
+        detail_lemak (string), json_lemak (json), 
+        detail_vitamin (string), json_vitamin (json), 
+        deskripsi_gizi (string), json_gizi (json), 
+        deskripsi_kelayakan (string). 
+        Berikan estimasi angka terbaik Anda.
+        ";
+
+        $rawResponse = ''; 
+
+        try {
+
+            $response = agent(
+                instructions: $systemPrompt
+            )->prompt(
+                'Analisis kandungan gizi dari gambar makanan ini.', 
+                attachments: [
+                    Image::fromPath($imagePath)
+                ],
+                // PENENTUAN PROVIDER DAN MODEL DI SINI:
+                provider: 'gemini',
+                model: 'gemini-2.5-flash'
+            );
+
+            $rawResponse = (string) $response;
+
+            $cleanJson = preg_replace('/```json\s*(.*?)\s*```/s', '$1', $rawResponse);
+            $aiData = json_decode($cleanJson, true); 
+
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new \Exception("JSON Decode Error: " . json_last_error_msg());
+            }
+
+            if ($aiData) {
+                $record->update([
+                    'deskripsi_gizi' => $aiData['deskripsi_gizi'] ?? null,
+                    'json_gizi' => isset($aiData['json_gizi']) ? json_encode($aiData['json_gizi']) : null,
+                    'deskripsi_kelayakan' => $aiData['deskripsi_kelayakan'] ?? null,
+                    'status' => 'ANALYZED',
+                ]);
+
+                $record->kandunganGizi()->create([
+                    'kalori' => $aiData['kalori'] ?? 0,
+                    'protein' => $aiData['protein'] ?? 0,
+                    'lemak' => $aiData['lemak'] ?? 0,
+                    'karbohidrat' => $aiData['karbohidrat'] ?? 0,
+                    'serat' => $aiData['serat'] ?? 0,
+                    'kalsium' => $aiData['kalsium'] ?? 0,
+                    'zat_besi' => $aiData['zat_besi'] ?? 0,
+                    'natrium' => $aiData['natrium'] ?? 0,
+                    'kalium' => $aiData['kalium'] ?? 0,
+                    'zinc' => $aiData['zinc'] ?? 0,
+                    'detail_lemak' => $aiData['detail_lemak'] ?? '-',
+                    'json_lemak' => isset($aiData['json_lemak']) ? json_encode($aiData['json_lemak']) : null,
+                    'detail_vitamin' => $aiData['detail_vitamin'] ?? '-',
+                    'json_vitamin' => isset($aiData['json_vitamin']) ? json_encode($aiData['json_vitamin']) : null,
+                ]);
+            }
+        } catch (\Exception $e) {
+            $record->update([
+                'status' => 'ANALYSIS_FAILED',
+                'deskripsi_kelayakan' => "ERROR: " . $e->getMessage() . "\n\nRAW RESPONSE:\n" . $rawResponse,
+            ]);
+            
+            \Illuminate\Support\Facades\Log::error('Gemini AI Analysis Failed: ' . $e->getMessage());
+        }
+    }
+}
