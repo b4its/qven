@@ -9,7 +9,7 @@ class BuktiKotakDiterima extends Model
 {
     //
     protected $table = 'bukti_kotak_diterima';
-    protected $fillable = ['vendor_id','instansi_penerima_id','user_id', 'kotak_mbg_id', 'code', 'imageUrl','feedback', 'blockchainHash'];
+    protected $fillable = ['vendor_id','instansi_penerima_id','user_id', 'kotak_mbg_id', 'code', 'imageUrl','feedback', 'json_analyze_feedback','blockchainHash'];
 
     public function user(): BelongsTo
     {

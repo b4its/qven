@@ -46,6 +46,12 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'public_folder' => [
+            'driver' => 'local',
+            'root' => public_path(),   // 👈 ini langsung ke folder public
+            'url' => env('APP_URL'),
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

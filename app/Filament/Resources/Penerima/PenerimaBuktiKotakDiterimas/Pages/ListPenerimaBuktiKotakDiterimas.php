@@ -9,8 +9,8 @@ use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http; // <-- Tambahkan ini
-use Illuminate\Support\Facades\Log;  // <-- Tambahkan ini
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class ListPenerimaBuktiKotakDiterimas extends ListRecords
 {
@@ -44,6 +44,35 @@ class ListPenerimaBuktiKotakDiterimas extends ListRecords
                     $data['vendor_id'] = Auth::user()->vendor_id;
                     $data['user_id'] = Auth::id();
                     $data['kotak_mbg_id'] = $kotak->id;
+
+                    // ------------------------------------------------------------------
+                    // INTEGRASI API ANALISIS (NLP/Sentiment)
+                    // ------------------------------------------------------------------
+                    if (!empty($data['feedback'])) {
+                        try {
+                            $analysisResponse = Http::timeout(5)
+                                ->withHeaders([
+                                    'Content-Type' => 'application/json',
+                                    'X-API-Key'    => 'RahasiaNegara123!'
+                                ])
+                                ->post('http://10.125.136.110:6005/analyze', [
+                                    'text' => $data['feedback']
+                                ]);
+
+                            if ($analysisResponse->successful()) {
+                                // Simpan hasil analisis ke array $data. 
+                                // Sesuaikan nama kolom ('analysis_result') dengan schema database Anda.
+                                // Contoh jika API merespon json: {"sentiment": "positif", "score": 0.8}
+                                $data['json_analyze_feedback'] = $analysisResponse->body(); 
+                            } else {
+                                Log::warning('API Analisis merespons dengan error: ' . $analysisResponse->body());
+                            }
+                        } catch (\Exception $e) {
+                            Log::error('Gagal terhubung ke API Analisis: ' . $e->getMessage());
+                            // Opsional: Anda bisa menambahkan $action->halt() jika analisis wajib berhasil.
+                        }
+                    }
+                    // ------------------------------------------------------------------
 
                     // 4. Generate Local Hash sementara (sebagai Local Chain of Trust)
                     $timestamp = now()->timestamp;
@@ -80,12 +109,12 @@ class ListPenerimaBuktiKotakDiterimas extends ListRecords
                             'action'           => 'created',
                             'description'      => "Bukti Kotak Diterima valid disubmit oleh user untuk kotak {$record->kotakMbg->code}.",
                             'table_name'       => $record->getTable(),
-                            'old_data'         => null, // Null karena ini record insert baru
+                            'old_data'         => null,
                             'new_data'         => $newData,
                             'ip_address'       => request()->ip() ?? '127.0.0.1',
                             'user_agent'       => request()->userAgent() ?? 'Filament/System',
                             'location'         => session('user_gps_lat') ? session('user_gps_lat') . ', ' . session('user_gps_lng') : null,
-                            'transaction_hash' => $record->blockchainHash // Kirim local hash untuk diverifikasi & disimpan Fabric
+                            'transaction_hash' => $record->blockchainHash
                         ]);
 
                         // Jika Fabric merespons sukses, timpa Local Hash dengan Fabric TxID
@@ -103,7 +132,7 @@ class ListPenerimaBuktiKotakDiterimas extends ListRecords
                         Log::error('Gagal terhubung ke Fabric Gateway: ' . $e->getMessage());
                     }
 
-                    // e. Catat Log Sistem Aktifitas General (akan memicu trigger kedua ke Fabric untuk log audit)
+                    // e. Catat Log Sistem Aktifitas General
                     KotakMBG::catatLogAktifitas(
                         $record, 
                         'created',

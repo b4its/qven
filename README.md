@@ -119,23 +119,23 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ### test api blockchain
 ```bash
-wget -qO- http://10.40.3.109:3000/api/query/GetAllAssets
-wget -qO- "http://10.40.3.109:3000/api/query/VerifyHash?hash="
-wget -qO- "http://10.40.3.109:3000/api/query/VerifyHash?hash=17a9c5d7af1ce72cd97e1e3018db9f6b"
+wget -qO- http://10.125.136.178:3000/api/query/GetAllAssets
+wget -qO- "http://10.125.136.178:3000/api/query/VerifyHash?hash="
+wget -qO- "http://10.125.136.178:3000/api/query/VerifyHash?hash=17a9c5d7af1ce72cd97e1e3018db9f6b"
 17a9c5d7af1ce72cd97e1e3018db9f6b
 
-wget -qO- -S "http://10.40.3.109:3000/api/query/VerifyHash?hash=17a9c5d7af1ce72cd97e1e3018db9f6b"
+wget -qO- -S "http://10.125.136.178:3000/api/query/VerifyHash?hash=17a9c5d7af1ce72cd97e1e3018db9f6b"
 
 
-wget -qO- -S "http://10.40.3.109:3000/api/query/GetAssetByTxId?txid=17a9c5d7af1ce72cd97e1e3018db9f6b"
+wget -qO- -S "http://10.125.136.178:3000/api/query/GetAssetByTxId?txid=17a9c5d7af1ce72cd97e1e3018db9f6b"
 ```
 
-wget -qO- -S "http://10.40.3.109:3000/api/query/GetAssetByTxId?txid=b67947cb5b0071737f1eb12e22df5e9c"
+wget -qO- -S "http://10.125.136.178:3000/api/query/GetAssetByTxId?txid=b67947cb5b0071737f1eb12e22df5e9c"
 
-wget -qO- "http://10.40.3.109:3000/api/query/GetAssetByTxId?txid=b91c580b3c78c23453fc9ccc7bc49952a13267050db125f555692124f977096a
+wget -qO- "http://10.125.136.178:3000/api/query/GetAssetByTxId?txid=b91c580b3c78c23453fc9ccc7bc49952a13267050db125f555692124f977096a
 "
 
 
-wget -qO- -S "http://10.40.3.109:3000/api/query/GetAssetByTxId?txid="
-
+wget -qO- -S "http://10.125.136.178:3000/api/query/GetAssetByTxId?txid="
+10.125.136.178
 

@@ -160,8 +160,11 @@ class PenerimaBuktiKotakDiterimasTable
                                             ->fontFamily('mono')
                                             ->color('gray')
                                             ->copyable()
-                                            ->limit(35)
                                             ->tooltip(fn ($record) => $record->blockchainHash),
+                                        ViewEntry::make('kotakMbg.kandunganGizi')
+                                            ->label('Grafik Radar Gizi dan Mineral')
+                                            ->view('filament.infolists.components.radar-gizi')
+                                            ->columnSpanFull(),
                                     ]),
                             ]), // End Grid Row 1
 

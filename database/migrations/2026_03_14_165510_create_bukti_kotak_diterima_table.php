@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('kotak_mbg_id')->constrained('kotak_mbg')->onDelete('cascade');
             $table->string('code')->nullable();
             $table->text('feedback')->nullable();
+            $table->json('json_analyze_feedback')->nullable();
             $table->text('imageUrl')->nullable();
             $table->string('blockchainHash')->nullable();
             $table->timestamps();
