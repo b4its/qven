@@ -39,7 +39,7 @@ class SuperadminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         $brandNames = 'Superadmin Panel';
-        $logoPath = asset('assets/logo/origin_oryphem_black.png');
+        $logoPath = asset('assets/logo/Logo-mono.png');
 
         return $panel
             ->id('superadmin')

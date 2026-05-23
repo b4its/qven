@@ -42,5 +42,5 @@
     }
 
     // Eksekusi menggunakan path dari Laravel
-    colorizeFavicon("{{ asset('assets/logo/origin_oryphem_black.png') }}");
+    colorizeFavicon("{{ asset('assets/logo/Logo-mono.png') }}");
 </script>

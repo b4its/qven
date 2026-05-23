@@ -12,7 +12,7 @@
 
 <div style="display: flex; align-items: center; gap: 10px;">
     <span>
-        <img src="{{ asset('assets/logo/origin_oryphem_black.png') }}"  
+        <img src="{{ asset('assets/logo/Logo-mono.png') }}"  
          alt="Logo" 
          class="brand-logo"
          style="height: 32px; width: auto; object-fit: contain;">
