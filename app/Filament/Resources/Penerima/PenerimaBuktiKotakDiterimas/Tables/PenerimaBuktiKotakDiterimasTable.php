@@ -137,6 +137,26 @@ class PenerimaBuktiKotakDiterimasTable
                                             ->markdown()
                                             ->default('Tidak ada ulasan.'),
 
+                                        KeyValueEntry::make('json_analyze_feedback')
+                                            ->label('Analisis Kualitas & Feedback')
+                                            ->getStateUsing(function ($record) {
+                                                $data = $record->json_analyze_feedback;
+                                                
+                                                // Jika data kosong
+                                                if (empty($data)) {
+                                                    return [];
+                                                }
+
+                                                // Jika data masih berupa string JSON (dari $analysisResponse->body()), decode menjadi Array
+                                                $decoded = is_string($data) ? json_decode($data, true) : $data;
+                                                
+                                                // Pastikan hasil decode adalah array sebelum dikembalikan
+                                                return is_array($decoded) ? $decoded : [];
+                                            })
+                                            ->keyLabel('Parameter Analisis') // Label untuk header kolom kiri
+                                            ->valueLabel('Hasil')            // Label untuk header kolom kanan
+                                            ->columnSpanFull(),
+
                                         TextEntry::make('imageUrl')
                                             ->label('Foto Bukti Penerimaan')
                                             ->html() // Mengizinkan tag HTML

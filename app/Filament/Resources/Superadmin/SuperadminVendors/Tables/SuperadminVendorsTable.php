@@ -39,11 +39,11 @@ class SuperadminVendorsTable
             ])
             ->recordActions([
                 Action::make('open_branch')
-                    ->label('Buka Cabang')
+                    ->label('Lihat Vendor')
                     // Gunakan nama asli dari Heroicons (m = mini, o = outline, s = solid)
                     ->icon('heroicon-m-arrow-right-on-rectangle') 
                     // Atur warna lewat method color, bukan nama icon
-                    ->color('primary') // 'warning' biasanya berwarna orange/amber di Filament
+                    ->color('cyan') // 'warning' biasanya berwarna orange/amber di Filament
                     ->url(fn (Vendor $record): string => route('filament.admin.pages.dashboard', ['tenant' => $record->id])),
                     
                 EditAction::make()

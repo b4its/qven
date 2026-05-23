@@ -47,6 +47,14 @@ class SuperadminPanelProvider extends PanelProvider
             ->viteTheme('resources/css/filament/superadmin/theme.css')
             ->colors([
                 'primary' => Color::Amber,
+                'royal'     => '#4f46e5', // Biru keunguan mewah
+                'emerald'   => '#10b981', // Hijau perhiasan
+                'ocean'     => '#0ea5e9', // Biru laut cerah
+                'sunshine'  => '#f59e0b', // Kuning hangat
+                'crimson'   => '#e11d48', // Merah gelap elegan
+                'slate'     => '#475569', // Abu-abu kebiruan profesional
+                'night'     => '#1e293b', // Gelap pekat
+                'cyan'  => '#3fbde4', // Ungu modern
             ])
             ->brandName($brandNames)
             ->brandLogo(fn() => view('filament.components.brand-logo', [
